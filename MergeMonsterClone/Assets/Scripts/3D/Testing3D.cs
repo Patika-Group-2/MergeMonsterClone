@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class Testing3D : MonoBehaviour
 {
-    [SerializeField] int _cellWidth = 8;
-    [SerializeField] int _cellHeight = 8;
+    [SerializeField] int _gridWidth = 8;
+    [SerializeField] int _gridHeight = 8;
     [SerializeField] float _cellSize = 1.0f;
 
     [SerializeField] Vector3 _originPosition = Vector3.zero;
@@ -24,14 +24,14 @@ public class Testing3D : MonoBehaviour
 
     void Awake()
     {
-        _boardGrid = new BoardGrid3D<Tile>(_cellWidth, _cellHeight, _cellSize, _originPosition, CreateNode);
+        _boardGrid = new BoardGrid3D<Tile>(_gridWidth, _gridHeight, _cellSize, _originPosition, CreateNode);
         GameObject tileContainer = GameObject.Find("TileContainer");
         if (tileContainer == null)
             tileContainer = new GameObject("TileContainer");
 
-        for (int i = 0; i < _boardGrid.Width; i++)
+        for (int i = 0; i < _boardGrid.GridWidth; i++)
         {
-            for (int j = 0; j < _boardGrid.Height; j++)
+            for (int j = 0; j < _boardGrid.GridHeight; j++)
             {
                 GameObject spawnedTile = InstantiateGameObject(_boardTilePrefab, _boardGrid.GetWorldPosition(i, j), Quaternion.Euler(90, 0, 0));
                 spawnedTile.name = $"Tile3D [{i}, {j}]";

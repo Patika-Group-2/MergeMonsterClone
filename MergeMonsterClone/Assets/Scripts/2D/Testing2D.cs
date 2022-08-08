@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class Testing2D : MonoBehaviour
 {
-    [SerializeField] int _cellWidth = 10;
-    [SerializeField] int _cellHeight = 10;
+    [SerializeField] int _gridWidth = 10;
+    [SerializeField] int _gridHeight = 10;
     [SerializeField] float _cellSize = 1.0f;
 
     [SerializeField] GameObject _boardTilePrefab;
@@ -20,14 +20,14 @@ public class Testing2D : MonoBehaviour
 
     void Awake()
     {
-        _boardGrid = new BoardGrid2D<Tile>(_cellWidth, _cellHeight, _cellSize, _originPosition, CreateNode);
+        _boardGrid = new BoardGrid2D<Tile>(_gridWidth, _gridHeight, _cellSize, _originPosition, CreateNode);
         GameObject tileContainer = GameObject.Find("TileContainer");
         if (tileContainer == null)
             tileContainer = new GameObject("TileContainer");
 
-        for (int i = 0; i < _boardGrid.Width; i++)
+        for (int i = 0; i < _boardGrid.GridWidth; i++)
         {
-            for (int j = 0; j < _boardGrid.Height; j++)
+            for (int j = 0; j < _boardGrid.GridHeight; j++)
             {
                 var spawnedTile = Instantiate(_boardTilePrefab, _boardGrid.GetWorldPosition(i, j), Quaternion.identity);
                 spawnedTile.name = $"Tile2D {i} {j}";
