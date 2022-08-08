@@ -3,15 +3,15 @@ using System;
 
 public class BoardGrid3D<TGridObject>
 {
-    int _width;
-    int _height;
+    int _gridWidth;
+    int _gridHeight;
     float _cellSize;
     Vector3 _originPosition;
 
     TGridObject[,] _gridTiles;
 
-    public int Width => _width;
-    public int Height => _height;
+    public int GridWidth => _gridWidth;
+    public int GridHeight => _gridHeight;
     public float CellSize => _cellSize;
     public Vector3 OriginPosition => _originPosition;
 
@@ -21,8 +21,8 @@ public class BoardGrid3D<TGridObject>
         if (width < 0 || height < 0)
             return;
 
-        _width = width;
-        _height = height;
+        _gridWidth = width;
+        _gridHeight = height;
         _cellSize = cellSize;
         _originPosition = originPosition;
 
@@ -56,7 +56,7 @@ public class BoardGrid3D<TGridObject>
 
     public void SetGridObject(int row, int column, TGridObject obj)
     {
-        if (row >= 0 && column >= 0 && row < _width && column < _height)
+        if (row >= 0 && column >= 0 && row < _gridWidth && column < _gridHeight)
         {
             _gridTiles[row, column] = obj;
         }
@@ -71,7 +71,7 @@ public class BoardGrid3D<TGridObject>
 
     public TGridObject GetGridObject(int row, int column)
     {
-        if (row >= 0 && column >= 0 && row < _width && column < _height)
+        if (row >= 0 && column >= 0 && row < _gridWidth && column < _gridHeight)
         {
             return _gridTiles[row, column];
         }
