@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public interface ICharacter
+public interface ICharacterGenerator
 {
     public GameObject CharacterPrefab { get; set; }
 

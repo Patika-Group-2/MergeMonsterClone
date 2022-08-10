@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 824524019046606590}
   - component: {fileID: 824524019046606591}
   - component: {fileID: 824524019046606588}
+  - component: {fileID: 2487663968153941910}
   m_Layer: 5
   m_Name: FightScreenCanvas
   m_TagString: Untagged
@@ -103,6 +104,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &2487663968153941910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 824524019046606589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a90b063deb7db95478f3a2ecf646eed5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &824524019478716650
 GameObject:
   m_ObjectHideFlags: 0
@@ -427,33 +440,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5226178615905246237, guid: 82d920450225dba44a50a4c0e619be17, type: 3}
-        m_TargetAssemblyTypeName: GameManagerO, Assembly-CSharp
-        m_MethodName: SetRunningTrue
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2647154787644295227, guid: beef9fa7eeb447d4daf4315097d2a3f8, type: 3}
-        m_TargetAssemblyTypeName: EntityManagerO, Assembly-CSharp
-        m_MethodName: FindEnemies
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2647154787644295227, guid: beef9fa7eeb447d4daf4315097d2a3f8, type: 3}
-        m_TargetAssemblyTypeName: EntityManagerO, Assembly-CSharp
-        m_MethodName: FindPlayers
+      - m_Target: {fileID: 2487663968153941910}
+        m_TargetAssemblyTypeName: FightScreenButtonHandler, Assembly-CSharp
+        m_MethodName: FightButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

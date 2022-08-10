@@ -49,4 +49,16 @@ public class EntityManagerO : MonoBehaviour
             Players.Add(go);
         }
     }
+
+    public void SetEntityList()
+    {
+        FindEnemies();
+        FindPlayers();
+    }
+
+    public void ClearLists()
+    {
+        Enemies.Clear();
+        Players.Clear();
+    }
 }

@@ -15,7 +15,7 @@ public class Testing3D : MonoBehaviour
     [SerializeField] LayerMask _characterLayerMask;
     [SerializeField] LayerMask _groundLayerMask;
 
-    ICharacter _characterInstance;
+    ICharacterGenerator _characterInstance;
     GameObject _pickedCharacter;
     Tile _lastPickedTile;
 
@@ -60,7 +60,7 @@ public class Testing3D : MonoBehaviour
                 _lastPickedTile = tile;
 
                 _pickedCharacter = hitCharacterObj.transform.gameObject;
-                _characterInstance = _pickedCharacter.GetComponent<ICharacter>();
+                _characterInstance = _pickedCharacter.GetComponent<ICharacterGenerator>();
                 SetTileState(tile, true);
                 return;
             }

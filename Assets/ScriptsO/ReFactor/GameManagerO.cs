@@ -5,7 +5,8 @@ using UnityEngine;
 public class GameManagerO : MonoBehaviour
 {
     public static GameManagerO Instance;
-    public bool GameIsRunning = false;
+    private bool _gameIsRunning = false;
+    public bool GameIsRunning => _gameIsRunning;
 
     private void Awake()
     {
@@ -22,7 +23,7 @@ public class GameManagerO : MonoBehaviour
 
     public void SetRunningTrue()
     {
-        GameIsRunning = true;
+        _gameIsRunning = true;
     }
 
     public void ChechFightStatus()
