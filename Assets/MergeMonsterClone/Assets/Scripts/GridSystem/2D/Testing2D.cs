@@ -8,7 +8,7 @@ public class Testing2D : MonoBehaviour
     [SerializeField] float _cellSize = 1.0f;
 
     [SerializeField] GameObject _boardTilePrefab;
-    [SerializeField] GameObject _characterObject;
+    [SerializeField] GameObject _Characterbject;
     [SerializeField] Vector3 _originPosition = Vector3.zero;
     [SerializeField] LayerMask _gameObjectLayerMask;
 
@@ -50,7 +50,7 @@ public class Testing2D : MonoBehaviour
 
                 if (tile.IsAvailable == true)
                 {
-                    var obj = Instantiate(_characterObject, (Vector2)tile.Get2DTilePosition(), Quaternion.identity);
+                    var obj = Instantiate(_Characterbject, (Vector2)tile.Get2DTilePosition(), Quaternion.identity);
                     tile.IsAvailable = false;
                 }
                 else

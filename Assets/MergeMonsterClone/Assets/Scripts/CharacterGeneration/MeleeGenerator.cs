@@ -9,9 +9,9 @@ public class MeleeGenerator : MonoBehaviour, ICharacterGenerator
 
     public void PositionCharacter(GameObject character, Vector3 position, Quaternion rotation)
     {
-        float characterOffset = _characterPrefab.GetComponent<MeshRenderer>().bounds.size.y / 2;
+        float Characterffset = _characterPrefab.GetComponent<MeshRenderer>().bounds.size.y / 2;
 
-        character.transform.position = position + Vector3.up * characterOffset;
+        character.transform.position = position + Vector3.up * Characterffset;
         character.transform.rotation = rotation;
     }
 

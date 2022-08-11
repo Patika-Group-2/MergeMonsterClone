@@ -1,21 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using System;
-public class RangedAttackO : AttackO
+public class RangedAttack : Attack
 {
-    [SerializeField] private int _attackDamage;
-    [SerializeField] private float _attackSpeed;
-    [SerializeField] private WandO _rangedWeapon;
-    private float _nextAttackTime = 0f;
+    [SerializeField] private Wand _rangedWeapon;
     public event Action OnAttack;
-
     private void Awake()
     {
-        _rangedWeapon = GetComponentInChildren<WandO>();
+        _rangedWeapon = GetComponentInChildren<Wand>();
     }
 
-    public override void Attack(Transform target)
+    public override void AttackTarget(Transform target)
     {
         if (target == null)
             return;

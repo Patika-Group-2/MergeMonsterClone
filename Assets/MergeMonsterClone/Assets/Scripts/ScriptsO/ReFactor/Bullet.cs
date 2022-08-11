@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletO : MonoBehaviour
+public class Bullet : MonoBehaviour
 {
     public Transform Target { get; set; }
     public int Damage { get; set; }
@@ -35,7 +33,7 @@ public class BulletO : MonoBehaviour
         if(distance <= 0.5f)
         {
             Destroy(gameObject);
-            CharacterO target = Target.GetComponent<CharacterO>();
+            Character target = Target.GetComponent<Character>();
             target.TakeDamage(Damage);
         }
     }

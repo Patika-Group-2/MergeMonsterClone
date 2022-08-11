@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EntityManagerO : MonoBehaviour
+public class EntityManager : MonoBehaviour
 {
-    public static EntityManagerO Instance;
+    public static EntityManager Instance;
     public List<GameObject> Players = null;
     public List<GameObject> Enemies = null;
 

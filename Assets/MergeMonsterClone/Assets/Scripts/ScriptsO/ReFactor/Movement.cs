@@ -1,9 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class MovementO : MonoBehaviour
+public class Movement : MonoBehaviour
 {
     [SerializeField] private float _attackRange;
     [SerializeField] float _movementSpeed;

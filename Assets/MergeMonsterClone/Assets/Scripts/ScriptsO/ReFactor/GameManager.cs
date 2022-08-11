@@ -1,10 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManagerO : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
-    public static GameManagerO Instance;
+    public static GameManager Instance;
     private bool _gameIsRunning = false;
     public bool GameIsRunning => _gameIsRunning;
 

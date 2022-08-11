@@ -4,7 +4,7 @@ public class FightScreenButtonHandler : MonoBehaviour
 {
     public void FightButton()
     {
-        EntityManagerO.Instance.SetEntityList();
-        GameManagerO.Instance.SetRunningTrue();
+        EntityManager.Instance.SetEntityList();
+        GameManager.Instance.SetRunningTrue();
     }
 }

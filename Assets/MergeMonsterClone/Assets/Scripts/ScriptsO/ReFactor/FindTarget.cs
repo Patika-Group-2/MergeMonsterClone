@@ -1,10 +1,9 @@
-using System;
 using UnityEngine;
 
-public abstract class FindTargetO : MonoBehaviour
+public abstract class FindTarget : MonoBehaviour
 {
     public Transform ClosestTarget { get; protected set; }
 
-    public abstract void FindTarget();
+    public abstract void FindTargets();
     public abstract void DelistOnDestroy();
 }

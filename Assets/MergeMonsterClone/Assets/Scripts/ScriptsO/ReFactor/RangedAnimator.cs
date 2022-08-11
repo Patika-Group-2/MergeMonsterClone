@@ -1,15 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class RangedAnimatorO : MonoBehaviour
+public class RangedAnimator : MonoBehaviour
 {
     [SerializeField] private Animator _rangedAnimator;
 
     private void Awake()
     {
         _rangedAnimator = GetComponent<Animator>();
-        GetComponent<RangedAttackO>().OnAttack += AttackAnimation;
+        GetComponent<RangedAttack>().OnAttack += AttackAnimation;
     }
 
     public void AttackAnimation()

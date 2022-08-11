@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class HealthO : MonoBehaviour
+public class Health : MonoBehaviour
 {
     [SerializeField] private int _maxHitPoint = 100;
     [SerializeField] private int _hitPoints;

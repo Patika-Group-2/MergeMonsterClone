@@ -1,22 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class FindEnemies : FindTargetO
+public class FindEnemies : FindTarget
 {
     public override void DelistOnDestroy()
     {
-        EntityManagerO.Instance.Players.Remove(this.gameObject);
+        EntityManager.Instance.Players.Remove(this.gameObject);
     }
 
-    public override void FindTarget()
+    public override void FindTargets()
     {
         float closestDistance = Mathf.Infinity;
 
-        if (EntityManagerO.Instance.Enemies != null)
+        if (EntityManager.Instance.Enemies != null)
         {
             foreach (GameObject go in
-                EntityManagerO.Instance.Enemies)
+                EntityManager.Instance.Enemies)
             {
                 float currentDistance;
                 currentDistance = Vector3.Distance(

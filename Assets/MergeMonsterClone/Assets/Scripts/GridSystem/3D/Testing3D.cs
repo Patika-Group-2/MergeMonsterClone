@@ -48,18 +48,18 @@ public class Testing3D : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         Tile tile;
 
-        bool characterHit = Physics.Raycast(ray, out RaycastHit hitCharacterObj, 1000f, _characterLayerMask);
+        bool characterHit = Physics.Raycast(ray, out RaycastHit hitCharacterbj, 1000f, _characterLayerMask);
         bool groundHit = Physics.Raycast(ray, out RaycastHit hitGroundObj, 1000f, _groundLayerMask);
 
         if (characterHit)
         {
-            tile = _boardGrid.GetGridObject(hitCharacterObj.point);
+            tile = _boardGrid.GetGridObject(hitCharacterbj.point);
 
             if (Input.GetMouseButtonDown(0))
             {
                 _lastPickedTile = tile;
 
-                _pickedCharacter = hitCharacterObj.transform.gameObject;
+                _pickedCharacter = hitCharacterbj.transform.gameObject;
                 _characterInstance = _pickedCharacter.GetComponent<ICharacterGenerator>();
                 SetTileState(tile, true);
                 return;

@@ -1,10 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class CharacterO : MonoBehaviour
+public abstract class Character : MonoBehaviour
 {
-
+    public FindTarget _findTarget;
+    public Health _health;
+    public Attack _attack;
     public abstract void FindClosestTarget();
     public abstract void Attack();
     public abstract void TakeDamage(int damage);

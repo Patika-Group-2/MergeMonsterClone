@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class MeleeAnimatorO : MonoBehaviour
+public class MeleeAnimator : MonoBehaviour
 {
     [SerializeField] private Animator _meleeAnimator;
 
