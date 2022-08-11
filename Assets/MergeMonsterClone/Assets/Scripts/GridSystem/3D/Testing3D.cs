@@ -69,25 +69,14 @@ public class Testing3D : MonoBehaviour
 
         if (groundHit)
         {
+          {
             tile = _boardGrid.GetGridObject(hitGroundObj.point);
-
-            if (Input.GetMouseButtonDown(0))
-            {
-                if (tile == null) return;
-
-                _lastPickedTile = tile;
-
-                if (tile.IsAvailable)
-                {
-                    _pickedCharacter = null;
-                }
-            }
 
             if (Input.GetMouseButton(0))
             {
                 if (_pickedCharacter != null)
                 {
-                    _characterInstance.PositionCharacter(_pickedCharacter, hitGroundObj.point, Quaternion.identity);
+                    _characterInstance.PositionCharacter(_pickedCharacter,hitGroundObj.point, Quaternion.identity);
                 }
             }
 
@@ -98,59 +87,100 @@ public class Testing3D : MonoBehaviour
 
                 tile = _boardGrid.GetGridObject(hitGroundObj.point);
 
-                if (tile != null)
+                if (tile == null)
                 {
-                    if (!tile.IsAvailable)
+                    _characterInstance.PositionCharacter(_pickedCharacter,GetTilePosition(_lastPickedTile), Quaternion.identity);
+                    SetTileState(_lastPickedTile, false);
+                    _lastPickedTile.TileObject = _pickedCharacter;
+                    _pickedCharacter = null;
+                    return;
+                }
+
+                if (!tile.IsAvailable)
+                {
+                    if (_pickedCharacter.tag == tile.TileObject.tag)
                     {
-                        // 2 if - tag aynıysa merge et - değilse last position.
-                        if(_pickedCharacter.tag == tile.TileObject.tag)
-                        {
-                            Instantiate(Resources.Load("Player 1"), tile.TileObject.transform.position, Quaternion.identity);
-                            Destroy(_pickedCharacter);
-                            Destroy(tile.TileObject);
-                            SetTileState(_lastPickedTile, true);
-                        }
-                        else
-                        {
-                        _characterInstance.PositionCharacter(_pickedCharacter, GetTilePosition(_lastPickedTile), Quaternion.identity);
-                        SetTileState(_lastPickedTile, false);
-                        _lastPickedTile.TileObject = _pickedCharacter;
-                        }
+                        MergeCheck(tile);
                     }
                     else
                     {
-                        _characterInstance.PositionCharacter(_pickedCharacter, GetTilePosition(tile), Quaternion.identity);
-                        SetTileState(tile, false);
-                        tile.TileObject = _pickedCharacter;
-                        if (_lastPickedTile != tile)
-                            SetTileState(_lastPickedTile, true);
-                            _lastPickedTile.TileObject = null;
+                        _characterInstance.PositionCharacter(_pickedCharacter,GetTilePosition(_lastPickedTile), Quaternion.identity);
+                        SetTileState(_lastPickedTile, false);
+                        _lastPickedTile.TileObject = _pickedCharacter;
                     }
                 }
                 else
-                {
-                    _characterInstance.PositionCharacter(_pickedCharacter, GetTilePosition(_lastPickedTile), Quaternion.identity);
-                    SetTileState(_lastPickedTile, false);
-                    _lastPickedTile.TileObject = _pickedCharacter;
-                }
+                    {
+                    _characterInstance.PositionCharacter(_pickedCharacter,GetTilePosition(tile), Quaternion.identity);
+                    SetTileState(tile, false);
+                    tile.TileObject = _pickedCharacter;
+                    if (_lastPickedTile != tile)
+                        SetTileState(_lastPickedTile, true);
+                    }
 
                 _pickedCharacter = null;
+                }
             }
         }
     }
-
-    void SetTileState(Tile tile, bool state)
+    void MergeCheck(Tile tile)
     {
-        tile.IsAvailable = state;
-    }
+        if (tile != _lastPickedTile)
+        {
+            GameObject MergedGO = GetMergedCharacter(_pickedCharacter.tag);
+            if (MergedGO == null)
+            {
+                _characterInstance.PositionCharacter(_pickedCharacter,GetTilePosition(_lastPickedTile), Quaternion.identity);
+                SetTileState(_lastPickedTile, false);
+                _lastPickedTile.TileObject = _pickedCharacter;
+            }
+            else
+            {
 
-    Vector3 GetTilePosition(Tile tile)
-    {
-        return tile.Get3DTilePosition();
-    }
+                Destroy(_pickedCharacter);
+                Destroy(tile.TileObject);
 
-    Tile CreateNode(BoardGrid3D<Tile> grid, int row, int column)
-    {
-        return new Tile(grid, row, column);
+                _pickedCharacter = MergedGO;
+                _characterInstance = _pickedCharacter.GetComponentInParent<ICharacterGenerator>();
+                _characterInstance.PositionCharacter(_pickedCharacter,GetTilePosition(tile), Quaternion.identity);
+                tile.TileObject = MergedGO;
+                SetTileState(_lastPickedTile, true);
+            }
+        }
     }
+    GameObject GetMergedCharacter(string mergeTag)
+    {
+        GameObject MergedCharacter;
+        switch (mergeTag)
+        {
+            case ("HumanLevel0"):
+                MergedCharacter = Instantiate(Resources.Load("Player 1") as GameObject);
+                break;
+            case ("HumanLevel1"):
+                MergedCharacter = Instantiate(Resources.Load("Player 2") as GameObject);
+                break;
+            // case ("HumanLevel2"):
+            //     MergedCharacter = Instantiate(Resources.Load("Player 3") as GameObject);
+            //     break;
+            default:
+                MergedCharacter = null;
+                break;
+        }
+
+        return MergedCharacter;
+    }
+        void SetTileState(Tile tile, bool state)
+        {
+            tile.IsAvailable = state;
+        }
+
+        Vector3 GetTilePosition(Tile tile)
+        {
+            return tile.Get3DTilePosition();
+        }
+
+        Tile CreateNode(BoardGrid3D<Tile> grid, int row, int column)
+        {
+            return new Tile(grid, row, column);
+        }
 }
