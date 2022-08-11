@@ -9,6 +9,7 @@ public class Tile
     public int Column { get; set; }
 
     public bool IsAvailable { get; set; }
+    public GameObject TileObject { get; set; }
 
 
     public Tile(BoardGrid2D<Tile> grid2D, int row, int column)

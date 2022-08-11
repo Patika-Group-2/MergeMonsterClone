@@ -41,6 +41,7 @@ public class GenerationHandler : MonoBehaviour
                 GameObject characterGO = character.GenerateCharacter();
                 character.PositionCharacter(characterGO, GetTilePosition(tile), character.CharacterPrefab.transform.rotation);
                 tile.IsAvailable = false;
+                tile.TileObject = characterGO;
                 return;
             }
         }

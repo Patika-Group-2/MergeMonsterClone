@@ -42,7 +42,8 @@ public class EntityManager : MonoBehaviour
     public void FindPlayers()
     {
         GameObject[] players =
-            GameObject.FindGameObjectsWithTag("Player");
+            GameObject.FindGameObjectsWithTag("HumanLevel0");
+            GameObject.FindGameObjectsWithTag("HumanLevel1");
 
         foreach (GameObject go in players)
         {

@@ -58,9 +58,10 @@ public class Testing3D : MonoBehaviour
             if (Input.GetMouseButtonDown(0))
             {
                 _lastPickedTile = tile;
-
+                tile.TileObject = null;
                 _pickedCharacter = hitCharacterbj.transform.gameObject;
                 _characterInstance = _pickedCharacter.GetComponent<ICharacterGenerator>();
+            
                 SetTileState(tile, true);
                 return;
             }
@@ -101,21 +102,36 @@ public class Testing3D : MonoBehaviour
                 {
                     if (!tile.IsAvailable)
                     {
+                        // 2 if - tag aynıysa merge et - değilse last position.
+                        if(_pickedCharacter.tag == tile.TileObject.tag)
+                        {
+                            Instantiate(Resources.Load("Player 1"), tile.TileObject.transform.position, Quaternion.identity);
+                            Destroy(_pickedCharacter);
+                            Destroy(tile.TileObject);
+                            SetTileState(_lastPickedTile, true);
+                        }
+                        else
+                        {
                         _characterInstance.PositionCharacter(_pickedCharacter, GetTilePosition(_lastPickedTile), Quaternion.identity);
                         SetTileState(_lastPickedTile, false);
+                        _lastPickedTile.TileObject = _pickedCharacter;
+                        }
                     }
                     else
                     {
                         _characterInstance.PositionCharacter(_pickedCharacter, GetTilePosition(tile), Quaternion.identity);
                         SetTileState(tile, false);
+                        tile.TileObject = _pickedCharacter;
                         if (_lastPickedTile != tile)
                             SetTileState(_lastPickedTile, true);
+                            _lastPickedTile.TileObject = null;
                     }
                 }
                 else
                 {
                     _characterInstance.PositionCharacter(_pickedCharacter, GetTilePosition(_lastPickedTile), Quaternion.identity);
                     SetTileState(_lastPickedTile, false);
+                    _lastPickedTile.TileObject = _pickedCharacter;
                 }
 
                 _pickedCharacter = null;

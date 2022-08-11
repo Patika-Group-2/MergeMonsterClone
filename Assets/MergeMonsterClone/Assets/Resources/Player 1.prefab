@@ -95,10 +95,10 @@ GameObject:
   - component: {fileID: 5701731231530134868}
   - component: {fileID: 5701731231530134865}
   - component: {fileID: 5701731231530134864}
-  - component: {fileID: -5184397929322803346}
+  - component: {fileID: -6822369482403100692}
   m_Layer: 6
-  m_Name: Player
-  m_TagString: HumanLevel0
+  m_Name: Player 1
+  m_TagString: HumanLevel1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -112,7 +112,7 @@ Transform:
   m_GameObject: {fileID: 5701731231530134827}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -8.36, y: 0.04, z: -8.14}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.25, y: 1.25, z: 1.25}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5701731233047749377}
@@ -287,7 +287,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _meleeAnimator: {fileID: 0}
---- !u!114 &-5184397929322803346
+--- !u!114 &-6822369482403100692
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - HumanLevel0
+  - HumanLevel1
+  - HumanLevel2
   layers:
   - Default
   - TransparentFX
