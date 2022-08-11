@@ -15,11 +15,11 @@ public class GenerationHandler : MonoBehaviour
         int row = Testing3D.BoardGrid.GridTiles.GetLength(0);
         int column = Testing3D.BoardGrid.GridTiles.GetLength(1);
 
-        for (int i = 0; i < row; i++)
+        for (int i = 0; i < column / 2; i++)
         {
-            for (int j = 0; j < column; j++)
+            for (int j = 0; j < row; j++)
             {
-                tileList.Add(Testing3D.BoardGrid.GridTiles[i, j]);
+                tileList.Add(Testing3D.BoardGrid.GridTiles[j, i]);
             }
         }
 
@@ -39,7 +39,7 @@ public class GenerationHandler : MonoBehaviour
             {
                 ICharacter character = GetComponent<ICharacter>();
                 GameObject characterGO = character.GenerateCharacter();
-                character.PositionCharacter(characterGO, GetTilePosition(tile), character.CharacterPrefab.transform.rotation);
+                characterGO.GetComponent<ICharacter>().PositionCharacter(GetTilePosition(tile), character.CharacterPrefab.transform.rotation);
                 tile.IsAvailable = false;
                 return;
             }

@@ -10,7 +10,6 @@ public class Testing3D : MonoBehaviour
     [SerializeField] Vector3 _originPosition = Vector3.zero;
 
     [SerializeField] GameObject _boardTilePrefab;
-    [SerializeField] GameObject _characterPrefab;
 
     [SerializeField] LayerMask _characterLayerMask;
     [SerializeField] LayerMask _groundLayerMask;
@@ -27,7 +26,7 @@ public class Testing3D : MonoBehaviour
 
     void Awake()
     {
-        _boardGrid = new BoardGrid3D<Tile>(_gridWidth, _gridHeight, _cellSize, _originPosition, CreateNode);
+        _boardGrid = new BoardGrid3D<Tile>(_gridWidth, _gridHeight, _cellSize, _originPosition, CreateTile);
         GameObject tileContainer = GameObject.Find("TileContainer");
         if (tileContainer == null)
             tileContainer = new GameObject("TileContainer");
@@ -86,7 +85,7 @@ public class Testing3D : MonoBehaviour
             {
                 if (_pickedCharacter != null)
                 {
-                    _characterInstance.PositionCharacter(_pickedCharacter, hitGroundObj.point, Quaternion.identity);
+                    _characterInstance.PositionCharacter(hitGroundObj.point, Quaternion.identity);
                 }
             }
 
@@ -101,12 +100,12 @@ public class Testing3D : MonoBehaviour
                 {
                     if (!tile.IsAvailable)
                     {
-                        _characterInstance.PositionCharacter(_pickedCharacter, GetTilePosition(_lastPickedTile), Quaternion.identity);
+                        _characterInstance.PositionCharacter(GetTilePosition(_lastPickedTile), Quaternion.identity);
                         SetTileState(_lastPickedTile, false);
                     }
                     else
                     {
-                        _characterInstance.PositionCharacter(_pickedCharacter, GetTilePosition(tile), Quaternion.identity);
+                        _characterInstance.PositionCharacter(GetTilePosition(tile), Quaternion.identity);
                         SetTileState(tile, false);
                         if (_lastPickedTile != tile)
                             SetTileState(_lastPickedTile, true);
@@ -114,7 +113,7 @@ public class Testing3D : MonoBehaviour
                 }
                 else
                 {
-                    _characterInstance.PositionCharacter(_pickedCharacter, GetTilePosition(_lastPickedTile), Quaternion.identity);
+                    _characterInstance.PositionCharacter(GetTilePosition(_lastPickedTile), Quaternion.identity);
                     SetTileState(_lastPickedTile, false);
                 }
 
@@ -133,7 +132,7 @@ public class Testing3D : MonoBehaviour
         return tile.Get3DTilePosition();
     }
 
-    Tile CreateNode(BoardGrid3D<Tile> grid, int row, int column)
+    Tile CreateTile(BoardGrid3D<Tile> grid, int row, int column)
     {
         return new Tile(grid, row, column);
     }

@@ -20,7 +20,7 @@ public class Testing2D : MonoBehaviour
 
     void Awake()
     {
-        _boardGrid = new BoardGrid2D<Tile>(_gridWidth, _gridHeight, _cellSize, _originPosition, CreateNode);
+        _boardGrid = new BoardGrid2D<Tile>(_gridWidth, _gridHeight, _cellSize, _originPosition, CreateTile);
         GameObject tileContainer = GameObject.Find("TileContainer");
         if (tileContainer == null)
             tileContainer = new GameObject("TileContainer");
@@ -115,7 +115,7 @@ public class Testing2D : MonoBehaviour
         return tile.Get2DTilePosition();
     }
 
-    Tile CreateNode(BoardGrid2D<Tile> grid, int row, int column)
+    Tile CreateTile(BoardGrid2D<Tile> grid, int row, int column)
     {
         return new Tile(grid, row, column);
     }

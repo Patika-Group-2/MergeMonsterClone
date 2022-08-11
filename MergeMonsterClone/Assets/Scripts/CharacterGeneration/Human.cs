@@ -7,12 +7,12 @@ public class Human : MonoBehaviour, ICharacter
     public GameObject CharacterPrefab { get => _characterPrefab; set => _characterPrefab = value; }
 
 
-    public void PositionCharacter(GameObject character, Vector3 position, Quaternion rotation)
+    public void PositionCharacter(Vector3 position, Quaternion rotation)
     {
-        float characterOffset = _characterPrefab.GetComponent<MeshRenderer>().bounds.size.y / 2;
+        float characterOffset = CharacterPrefab.GetComponent<MeshRenderer>().bounds.size.y / 2;
 
-        character.transform.position = position + Vector3.up * characterOffset;
-        character.transform.rotation = rotation;
+        transform.position = position + Vector3.up * characterOffset;
+        transform.rotation = rotation;
     }
 
     public GameObject GenerateCharacter()
