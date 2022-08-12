@@ -39,7 +39,7 @@ public class GenerationHandler : MonoBehaviour
             {
                 ICharacterGenerator character = GetComponent<ICharacterGenerator>();
                 GameObject characterGO = character.GenerateCharacter();
-                character.PositionCharacter(characterGO, GetTilePosition(tile), character.CharacterPrefab.transform.rotation);
+                characterGO.GetComponent<ICharacterGenerator>().PositionCharacter(GetTilePosition(tile), character.CharacterPrefab.transform.rotation);
                 tile.IsAvailable = false;
                 tile.TileObject = characterGO;
                 return;

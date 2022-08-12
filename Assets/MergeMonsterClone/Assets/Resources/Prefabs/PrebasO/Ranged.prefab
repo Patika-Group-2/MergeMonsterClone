@@ -508,8 +508,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _findTarget: {fileID: 0}
-  _attack: {fileID: 0}
   _health: {fileID: 0}
+  _attack: {fileID: 0}
 --- !u!114 &4161090162386440869
 MonoBehaviour:
   m_ObjectHideFlags: 0

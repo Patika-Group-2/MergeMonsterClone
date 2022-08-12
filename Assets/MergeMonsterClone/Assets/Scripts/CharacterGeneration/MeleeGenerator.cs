@@ -7,19 +7,17 @@ public class MeleeGenerator : MonoBehaviour, ICharacterGenerator
     public GameObject CharacterPrefab { get => _characterPrefab; set => _characterPrefab = value; }
 
 
-    public void PositionCharacter(GameObject character, Vector3 position, Quaternion rotation)
+    public void PositionCharacter(Vector3 position, Quaternion rotation)
     {
         float Characterffset = _characterPrefab.GetComponent<MeshRenderer>().bounds.size.y / 2;
 
-        character.transform.position = position + Vector3.up * Characterffset;
-        character.transform.rotation = rotation;
+        transform.position = position + Vector3.up * Characterffset;
+        transform.rotation = rotation;
     }
 
     public GameObject GenerateCharacter()
     {
         GameObject go = Instantiate(CharacterPrefab);
-        MeleeGenerator melee = go.AddComponent<MeleeGenerator>();
-        melee.CharacterPrefab = CharacterPrefab;
         return go;
     }
 }
