@@ -76,7 +76,7 @@ public class Testing3D : MonoBehaviour
             {
                 if (_pickedCharacter != null)
                 {
-                    _characterInstance.PositionCharacter(_pickedCharacter,hitGroundObj.point, Quaternion.identity);
+                    _characterInstance.PositionCharacter(hitGroundObj.point, Quaternion.identity);
                 }
             }
 
@@ -89,7 +89,7 @@ public class Testing3D : MonoBehaviour
 
                 if (tile == null)
                 {
-                    _characterInstance.PositionCharacter(_pickedCharacter,GetTilePosition(_lastPickedTile), Quaternion.identity);
+                    _characterInstance.PositionCharacter(GetTilePosition(_lastPickedTile), Quaternion.identity);
                     SetTileState(_lastPickedTile, false);
                     _lastPickedTile.TileObject = _pickedCharacter;
                     _pickedCharacter = null;
@@ -104,14 +104,14 @@ public class Testing3D : MonoBehaviour
                     }
                     else
                     {
-                        _characterInstance.PositionCharacter(_pickedCharacter,GetTilePosition(_lastPickedTile), Quaternion.identity);
+                        _characterInstance.PositionCharacter(GetTilePosition(_lastPickedTile), Quaternion.identity);
                         SetTileState(_lastPickedTile, false);
                         _lastPickedTile.TileObject = _pickedCharacter;
                     }
                 }
                 else
                     {
-                    _characterInstance.PositionCharacter(_pickedCharacter,GetTilePosition(tile), Quaternion.identity);
+                    _characterInstance.PositionCharacter(GetTilePosition(tile), Quaternion.identity);
                     SetTileState(tile, false);
                     tile.TileObject = _pickedCharacter;
                     if (_lastPickedTile != tile)
@@ -130,7 +130,7 @@ public class Testing3D : MonoBehaviour
             GameObject MergedGO = GetMergedCharacter(_pickedCharacter.tag);
             if (MergedGO == null)
             {
-                _characterInstance.PositionCharacter(_pickedCharacter,GetTilePosition(_lastPickedTile), Quaternion.identity);
+                _characterInstance.PositionCharacter(GetTilePosition(_lastPickedTile), Quaternion.identity);
                 SetTileState(_lastPickedTile, false);
                 _lastPickedTile.TileObject = _pickedCharacter;
             }
@@ -142,7 +142,7 @@ public class Testing3D : MonoBehaviour
 
                 _pickedCharacter = MergedGO;
                 _characterInstance = _pickedCharacter.GetComponentInParent<ICharacterGenerator>();
-                _characterInstance.PositionCharacter(_pickedCharacter,GetTilePosition(tile), Quaternion.identity);
+                _characterInstance.PositionCharacter(GetTilePosition(tile), Quaternion.identity);
                 tile.TileObject = MergedGO;
                 SetTileState(_lastPickedTile, true);
             }
@@ -159,9 +159,9 @@ public class Testing3D : MonoBehaviour
             case ("HumanLevel1"):
                 MergedCharacter = Instantiate(Resources.Load("Player 2") as GameObject);
                 break;
-            // case ("HumanLevel2"):
-            //     MergedCharacter = Instantiate(Resources.Load("Player 3") as GameObject);
-            //     break;
+            case ("HumanLevel2"):
+                MergedCharacter = Instantiate(Resources.Load("Player 3") as GameObject);
+                break;
             default:
                 MergedCharacter = null;
                 break;
