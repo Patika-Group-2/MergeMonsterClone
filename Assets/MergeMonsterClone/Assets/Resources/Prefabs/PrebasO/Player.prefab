@@ -95,7 +95,6 @@ GameObject:
   - component: {fileID: 5701731231530134868}
   - component: {fileID: 5701731231530134865}
   - component: {fileID: 5701731231530134864}
-  - component: {fileID: -5184397929322803346}
   m_Layer: 6
   m_Name: Player
   m_TagString: HumanLevel0
@@ -287,19 +286,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _meleeAnimator: {fileID: 0}
---- !u!114 &-5184397929322803346
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5701731231530134827}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fc0d951472c5f948947593b5a75d986, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _characterPrefab: {fileID: 5701731231530134827}
 --- !u!1 &5701731232462089340
 GameObject:
   m_ObjectHideFlags: 0

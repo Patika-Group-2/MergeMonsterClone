@@ -10,6 +10,7 @@ public class Testing3D : MonoBehaviour
     [SerializeField] Vector3 _originPosition = Vector3.zero;
 
     [SerializeField] GameObject _boardTilePrefab;
+    [SerializeField] GameObject _characterPrefab;
 
     [SerializeField] LayerMask _characterLayerMask;
     [SerializeField] LayerMask _groundLayerMask;
@@ -47,20 +48,20 @@ public class Testing3D : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         Tile tile;
 
-        bool characterHit = Physics.Raycast(ray, out RaycastHit hitCharacterObj, 1000f, _characterLayerMask);
+        bool characterHit = Physics.Raycast(ray, out RaycastHit hitCharacterbj, 1000f, _characterLayerMask);
         bool groundHit = Physics.Raycast(ray, out RaycastHit hitGroundObj, 1000f, _groundLayerMask);
 
         if (characterHit)
         {
-            tile = _boardGrid.GetGridObject(hitCharacterObj.transform.root.position);
+            tile = _boardGrid.GetGridObject(hitCharacterbj.point);
 
             if (Input.GetMouseButtonDown(0))
             {
                 _lastPickedTile = tile;
                 tile.TileObject = null;
-                _pickedCharacter = hitCharacterObj.transform.gameObject;
-                _characterInstance = _pickedCharacter.GetComponentInParent<ICharacterGenerator>();
-
+                _pickedCharacter = hitCharacterbj.transform.gameObject;
+                _characterInstance = _pickedCharacter.GetComponent<ICharacterGenerator>();
+            
                 SetTileState(tile, true);
                 return;
             }
@@ -68,13 +69,14 @@ public class Testing3D : MonoBehaviour
 
         if (groundHit)
         {
+          {
             tile = _boardGrid.GetGridObject(hitGroundObj.point);
 
             if (Input.GetMouseButton(0))
             {
                 if (_pickedCharacter != null)
                 {
-                    _characterInstance.PositionCharacter(hitGroundObj.point, Quaternion.identity);
+                    _characterInstance.PositionCharacter(_pickedCharacter,hitGroundObj.point, Quaternion.identity);
                 }
             }
 
@@ -87,7 +89,7 @@ public class Testing3D : MonoBehaviour
 
                 if (tile == null)
                 {
-                    _characterInstance.PositionCharacter(GetTilePosition(_lastPickedTile), Quaternion.identity);
+                    _characterInstance.PositionCharacter(_pickedCharacter,GetTilePosition(_lastPickedTile), Quaternion.identity);
                     SetTileState(_lastPickedTile, false);
                     _lastPickedTile.TileObject = _pickedCharacter;
                     _pickedCharacter = null;
@@ -102,25 +104,25 @@ public class Testing3D : MonoBehaviour
                     }
                     else
                     {
-                        _characterInstance.PositionCharacter(GetTilePosition(_lastPickedTile), Quaternion.identity);
+                        _characterInstance.PositionCharacter(_pickedCharacter,GetTilePosition(_lastPickedTile), Quaternion.identity);
                         SetTileState(_lastPickedTile, false);
                         _lastPickedTile.TileObject = _pickedCharacter;
                     }
                 }
                 else
-                {
-                    _characterInstance.PositionCharacter(GetTilePosition(tile), Quaternion.identity);
+                    {
+                    _characterInstance.PositionCharacter(_pickedCharacter,GetTilePosition(tile), Quaternion.identity);
                     SetTileState(tile, false);
                     tile.TileObject = _pickedCharacter;
                     if (_lastPickedTile != tile)
                         SetTileState(_lastPickedTile, true);
-                }
+                    }
 
                 _pickedCharacter = null;
+                }
             }
         }
     }
-
     void MergeCheck(Tile tile)
     {
         if (tile != _lastPickedTile)
@@ -128,7 +130,7 @@ public class Testing3D : MonoBehaviour
             GameObject MergedGO = GetMergedCharacter(_pickedCharacter.tag);
             if (MergedGO == null)
             {
-                _characterInstance.PositionCharacter(GetTilePosition(_lastPickedTile), Quaternion.identity);
+                _characterInstance.PositionCharacter(_pickedCharacter,GetTilePosition(_lastPickedTile), Quaternion.identity);
                 SetTileState(_lastPickedTile, false);
                 _lastPickedTile.TileObject = _pickedCharacter;
             }
@@ -140,13 +142,12 @@ public class Testing3D : MonoBehaviour
 
                 _pickedCharacter = MergedGO;
                 _characterInstance = _pickedCharacter.GetComponentInParent<ICharacterGenerator>();
-                _characterInstance.PositionCharacter(GetTilePosition(tile), Quaternion.identity);
+                _characterInstance.PositionCharacter(_pickedCharacter,GetTilePosition(tile), Quaternion.identity);
                 tile.TileObject = MergedGO;
                 SetTileState(_lastPickedTile, true);
             }
         }
     }
-
     GameObject GetMergedCharacter(string mergeTag)
     {
         GameObject MergedCharacter;
@@ -158,9 +159,9 @@ public class Testing3D : MonoBehaviour
             case ("HumanLevel1"):
                 MergedCharacter = Instantiate(Resources.Load("Player 2") as GameObject);
                 break;
-            case ("HumanLevel2"):
-                MergedCharacter = Instantiate(Resources.Load("Player 3") as GameObject);
-                break;
+            // case ("HumanLevel2"):
+            //     MergedCharacter = Instantiate(Resources.Load("Player 3") as GameObject);
+            //     break;
             default:
                 MergedCharacter = null;
                 break;
@@ -168,19 +169,18 @@ public class Testing3D : MonoBehaviour
 
         return MergedCharacter;
     }
+        void SetTileState(Tile tile, bool state)
+        {
+            tile.IsAvailable = state;
+        }
 
-    void SetTileState(Tile tile, bool state)
-    {
-        tile.IsAvailable = state;
-    }
+        Vector3 GetTilePosition(Tile tile)
+        {
+            return tile.Get3DTilePosition();
+        }
 
-    Vector3 GetTilePosition(Tile tile)
-    {
-        return tile.Get3DTilePosition();
-    }
-
-    Tile CreateNode(BoardGrid3D<Tile> grid, int row, int column)
-    {
-        return new Tile(grid, row, column);
-    }
+        Tile CreateNode(BoardGrid3D<Tile> grid, int row, int column)
+        {
+            return new Tile(grid, row, column);
+        }
 }
