@@ -126,11 +126,12 @@ public class Testing3D : MonoBehaviour
             }
         }
     }
+
     void MergeCheck(Tile tile)
     {
         if (tile != _lastPickedTile)
         {
-            GameObject MergedGO = GetMergedCharacter(_pickedCharacter.tag);
+            GameObject MergedGO = GetMergedCharacter(_pickedCharacter.tag, tile);
             if (MergedGO == null)
             {
                 _characterInstance.PositionCharacter(GetTilePosition(_lastPickedTile), _characterInstance.CharacterPrefab.transform.rotation);
@@ -151,10 +152,11 @@ public class Testing3D : MonoBehaviour
             }
         }
     }
-    GameObject GetMergedCharacter(string mergeTag)
+
+    GameObject GetMergedCharacter(string mergeTag, Tile tile)
     {
         GameObject MergedCharacter;
-        if (_characterInstance is MeleeGenerator)
+        if (_characterInstance is MeleeGenerator && tile.TileObject.GetComponent<ICharacterGenerator>() is MeleeGenerator)
         {
             switch (mergeTag)
             {
@@ -172,7 +174,7 @@ public class Testing3D : MonoBehaviour
                     break;
             }
         }
-        else
+        else if (_characterInstance is RangedGenerator && tile.TileObject.GetComponent<ICharacterGenerator>() is RangedGenerator)
         {
             switch (mergeTag)
             {
@@ -187,9 +189,12 @@ public class Testing3D : MonoBehaviour
                     break;
             }
         }
+        else
+            MergedCharacter = null;
 
         return MergedCharacter;
     }
+
     void SetTileState(Tile tile, bool state)
     {
         tile.IsAvailable = state;

@@ -15,11 +15,11 @@ public class GenerationHandler : MonoBehaviour
         int row = Testing3D.BoardGrid.GridTiles.GetLength(0);
         int column = Testing3D.BoardGrid.GridTiles.GetLength(1);
 
-        for (int i = 0; i < column / 2; i++)
+        for (int i = 0; i < row / 2; i++)
         {
-            for (int j = 0; j < row; j++)
+            for (int j = 0; j < column; j++)
             {
-                tileList.Add(Testing3D.BoardGrid.GridTiles[j, i]);
+                tileList.Add(Testing3D.BoardGrid.GridTiles[i, j]);
             }
         }
 
@@ -39,11 +39,7 @@ public class GenerationHandler : MonoBehaviour
             {
                 ICharacterGenerator character = GetComponent<ICharacterGenerator>();
                 GameObject characterGO = character.GenerateCharacter();
-<<<<<<< HEAD:MergeMonsterClone/Assets/Scripts/CharacterGeneration/GenerationHandler.cs
-                characterGO.GetComponent<ICharacter>().PositionCharacter(GetTilePosition(tile), character.CharacterPrefab.transform.rotation);
-=======
                 characterGO.GetComponent<ICharacterGenerator>().PositionCharacter(GetTilePosition(tile), character.CharacterPrefab.transform.rotation);
->>>>>>> Arda:Assets/MergeMonsterClone/Assets/Scripts/CharacterGeneration/GenerationHandler.cs
                 tile.IsAvailable = false;
                 tile.TileObject = characterGO;
                 return;
