@@ -8,12 +8,13 @@ public class BoardGrid3D<TGridObject>
     float _cellSize;
     Vector3 _originPosition;
     TGridObject[,] _gridTiles;
-
+    TGridObject[,] _enemyTiles;
     public int GridWidth => _gridWidth;
     public int GridHeight => _gridHeight;
     public float CellSize => _cellSize;
     public Vector3 OriginPosition => _originPosition;
     public TGridObject[,] GridTiles => _gridTiles;
+    public TGridObject[,] EnemyTiles => _enemyTiles;
 
 
     public BoardGrid3D(int width, int height, float cellSize, Vector3 originPosition, Func<BoardGrid3D<TGridObject>, int, int, TGridObject> createGridObject)
@@ -38,6 +39,8 @@ public class BoardGrid3D<TGridObject>
                 Debug.DrawLine(GetWorldPosition(i, j) - new Vector3(1, 0, 1) * _cellSize / 2, GetWorldPosition(i + 1, j) - new Vector3(1, 0, 1) * _cellSize / 2, Color.white, 100f);
             }
         }
+
+        SetEnemyTiles();
 
         Debug.DrawLine(GetWorldPosition(width, 0) - new Vector3(1, 0, 1) * _cellSize / 2, GetWorldPosition(width, height) - new Vector3(1, 0, 1) * _cellSize / 2, Color.white, 100f);
         Debug.DrawLine(GetWorldPosition(0, height) - new Vector3(1, 0, 1) * _cellSize / 2, GetWorldPosition(width, height) - new Vector3(1, 0, 1) * _cellSize / 2, Color.white, 100f);
@@ -84,5 +87,18 @@ public class BoardGrid3D<TGridObject>
         int row, column;
         GetRowAndColumn(worldPosition, out row, out column);
         return GetGridObject(row, column);
+    }
+
+    public void SetEnemyTiles()
+    {
+        _enemyTiles = new TGridObject[(_gridTiles.GetLength(0) / 2), _gridTiles.GetLength(1)];
+
+        for (int i = 0; i < (_gridTiles.GetLength(0) / 2); i++)
+        {
+            for (int j = 0; j < _gridTiles.GetLength(1); j++)
+            {
+                _enemyTiles[i, j] = _gridTiles[i + (_gridTiles.GetLength(0) / 2), j];
+            }
+        }
     }
 }

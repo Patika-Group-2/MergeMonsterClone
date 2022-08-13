@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EntityManager : MonoBehaviour
 {
+    [SerializeField] int _playerTypeCount = 4;
     public static EntityManager Instance;
     public List<GameObject> Players = null;
     public List<GameObject> Enemies = null;
@@ -27,13 +28,13 @@ public class EntityManager : MonoBehaviour
         //FindEnemies();
         //FindPlayers();
     }
-    
+
     public void FindEnemies()
     {
-       GameObject[] enemies = 
-            GameObject.FindGameObjectsWithTag("Enemy");
+        GameObject[] enemies =
+             GameObject.FindGameObjectsWithTag("Enemy");
 
-        foreach(GameObject go in enemies)
+        foreach (GameObject go in enemies)
         {
             Enemies.Add(go);
         }
@@ -41,13 +42,10 @@ public class EntityManager : MonoBehaviour
 
     public void FindPlayers()
     {
-        GameObject[] players =
-            GameObject.FindGameObjectsWithTag("HumanLevel0");
-            GameObject.FindGameObjectsWithTag("HumanLevel1");
-
-        foreach (GameObject go in players)
+        for (int i = 0; i < _playerTypeCount; i++)
         {
-            Players.Add(go);
+            GameObject[] player = GameObject.FindGameObjectsWithTag("HumanLevel" + i.ToString());
+            Players.AddRange(player);
         }
     }
 

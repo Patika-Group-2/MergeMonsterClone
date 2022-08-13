@@ -407,7 +407,7 @@ GameObject:
   - component: {fileID: 4161090162386440872}
   - component: {fileID: 4161090162386440873}
   - component: {fileID: 4071872369017875603}
-  - component: {fileID: -3302954755989601861}
+  - component: {fileID: 70350569247160979}
   m_Layer: 0
   m_Name: EnemyRanged
   m_TagString: Enemy
@@ -423,7 +423,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4161090162386440867}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7, y: 1, z: 7}
+  m_LocalPosition: {x: 11.25, y: 1, z: 13.75}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -511,6 +511,8 @@ MonoBehaviour:
   _findTarget: {fileID: 0}
   _health: {fileID: 0}
   _attack: {fileID: 0}
+  row: 0
+  column: 6
 --- !u!114 &4161090162386440875
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -586,7 +588,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 762749d691caa484a9bf0745386f02eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-3302954755989601861
+--- !u!114 &70350569247160979
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -595,10 +597,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4161090162386440867}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a234f5f20fcac014ab615bfbf7d3f592, type: 3}
+  m_Script: {fileID: 11500000, guid: c79739ed0dbcb3c449b5be201b9a945f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goldReward: 25
+  _characterPrefab: {fileID: 4161090162386440867}
 --- !u!1 &4161090162623458936
 GameObject:
   m_ObjectHideFlags: 0

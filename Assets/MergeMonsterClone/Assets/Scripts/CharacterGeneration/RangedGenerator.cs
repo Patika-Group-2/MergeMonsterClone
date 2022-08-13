@@ -9,7 +9,7 @@ public class RangedGenerator : MonoBehaviour, ICharacterGenerator
 
     public void PositionCharacter(Vector3 position, Quaternion rotation)
     {
-        float Characterffset = CharacterPrefab.GetComponent<MeshRenderer>().bounds.size.y / 2;
+        float Characterffset = CharacterPrefab.GetComponentInChildren<Renderer>().bounds.size.y / 2;
 
         transform.position = position + Vector3.up * Characterffset;
         transform.rotation = rotation;
