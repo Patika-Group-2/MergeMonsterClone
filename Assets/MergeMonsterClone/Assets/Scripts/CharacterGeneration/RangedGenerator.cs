@@ -7,19 +7,22 @@ public class RangedGenerator : MonoBehaviour, ICharacterGenerator
     public GameObject CharacterPrefab { get => _characterPrefab; set => _characterPrefab = value; }
 
 
-    public void PositionCharacter(GameObject character, Vector3 position, Quaternion rotation)
+    public void PositionCharacter(Vector3 position, Quaternion rotation)
     {
-        float Characterffset = CharacterPrefab.GetComponent<MeshRenderer>().bounds.size.y / 2;
+        float Characterffset = CharacterPrefab.GetComponentInChildren<Renderer>().bounds.size.y / 2;
 
-        character.transform.position = position + Vector3.up * Characterffset;
-        character.transform.rotation = rotation;
+        transform.position = position + Vector3.up * Characterffset;
+        transform.rotation = rotation;
     }
 
     public GameObject GenerateCharacter()
     {
         GameObject go = Instantiate(CharacterPrefab);
+<<<<<<< HEAD
         //RangedGenerator ranged = go.AddComponent<RangedGenerator>();
         //ranged.CharacterPrefab = CharacterPrefab;
+=======
+>>>>>>> 9aac39cc77041f85a515704b8e844507831aa8a9
         return go;
     }
 }

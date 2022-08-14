@@ -12,6 +12,6 @@ public class MeleeAnimator : MonoBehaviour
 
     public void AttackAnimation()
     {
-        _meleeAnimator.SetTrigger("Attack");
+        // _meleeAnimator.SetTrigger("Attack");
     }
 }

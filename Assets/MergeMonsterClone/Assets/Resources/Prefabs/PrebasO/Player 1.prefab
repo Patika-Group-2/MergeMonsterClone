@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5701731231249132515}
   - component: {fileID: 5701731231249132513}
   - component: {fileID: 5701731231249132514}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,10 +95,10 @@ GameObject:
   - component: {fileID: 5701731231530134868}
   - component: {fileID: 5701731231530134865}
   - component: {fileID: 5701731231530134864}
-  - component: {fileID: -400777919426645483}
+  - component: {fileID: -6822369482403100692}
   m_Layer: 6
   m_Name: Player 1
-  m_TagString: Player
+  m_TagString: HumanLevel1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -111,8 +111,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5701731231530134827}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.5, y: 1, z: 4.5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.25, y: 1.25, z: 1.25}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5701731233047749377}
@@ -199,8 +199,6 @@ MonoBehaviour:
   _findTarget: {fileID: 0}
   _health: {fileID: 0}
   _attack: {fileID: 0}
-  Row: 3
-  Column: 4
 --- !u!114 &5701731231530134869
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -289,7 +287,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _meleeAnimator: {fileID: 0}
---- !u!114 &-400777919426645483
+--- !u!114 &-6822369482403100692
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -313,7 +311,7 @@ GameObject:
   - component: {fileID: 5701731232462089337}
   - component: {fileID: 5701731232462089338}
   - component: {fileID: 5701731232462089339}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Foreground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -391,7 +389,7 @@ GameObject:
   - component: {fileID: 5701731233014249330}
   - component: {fileID: 5701731233014249331}
   - component: {fileID: 5701731233014249333}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: HealtBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -507,7 +505,7 @@ GameObject:
   - component: {fileID: 5701731233047749390}
   - component: {fileID: 5701731233047749391}
   - component: {fileID: 5701731233047749376}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}

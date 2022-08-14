@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - HumanLevel0
+  - HumanLevel1
+  - HumanLevel2
+  - HumanLevel3
   layers:
   - Default
   - TransparentFX
@@ -13,8 +17,8 @@ TagManager:
   - Water
   - UI
   - Draggable
-  - 
-  - 
+  - Ground
+  - Tile
   - 
   - 
   - 
