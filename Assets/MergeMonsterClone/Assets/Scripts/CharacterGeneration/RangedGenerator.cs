@@ -9,6 +9,7 @@ public class RangedGenerator : MonoBehaviour, ICharacterGenerator
 
     public void PositionCharacter(Vector3 position, Quaternion rotation)
     {
+        //Green dragon not suitable for this method
         float Characterffset = CharacterPrefab.GetComponentInChildren<Renderer>().bounds.size.y / 2;
 
         transform.position = position + Vector3.up * Characterffset;

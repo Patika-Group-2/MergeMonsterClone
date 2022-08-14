@@ -72,7 +72,7 @@ public class LevelCreator : MonoBehaviour
             Character enemy = Instantiate(_currentLevel._enemyList[i]);
             ICharacterGenerator go = enemy.GetComponent<ICharacterGenerator>();
 
-            go.PositionCharacter(enemy.gameObject, postion, go.CharacterPrefab.transform.rotation);
+            go.PositionCharacter(postion, go.CharacterPrefab.transform.rotation);
             _enemies.Add(enemy);
 
             tile.IsAvailable = false;
@@ -82,7 +82,7 @@ public class LevelCreator : MonoBehaviour
     public void GeneratePlayers()
     {
         _players.Clear();
-        
+
         for (int i = 0; i < Data.PlayerEntities.Count; i++)
         {
             int row = Data.Rows[i];
@@ -99,8 +99,9 @@ public class LevelCreator : MonoBehaviour
             SetCharacterTileID(player, row, column);
 
             ICharacterGenerator go = player.GetComponent<ICharacterGenerator>();
-            go.PositionCharacter(player.gameObject, postion, go.CharacterPrefab.transform.rotation);
+            go.PositionCharacter(postion, go.CharacterPrefab.transform.rotation);
 
+            tile.TileObject = player.gameObject;
             _players.Add(player);
 
             tile.IsAvailable = false;
@@ -160,20 +161,20 @@ public class LevelCreator : MonoBehaviour
             Data.PlayerEntities.Add(prefab.GetComponent<Character>());
         }
     }
-    
+
     public void ClearBoard()
     {
-        foreach(var player in _players)
+        foreach (var player in _players)
         {
-            if(player != null)
+            if (player != null)
             {
                 Destroy(player.gameObject);
             }
         }
 
-        foreach(var enemy in _enemies)
+        foreach (var enemy in _enemies)
         {
-            if(enemy != null)
+            if (enemy != null)
             {
                 Destroy(enemy.gameObject);
             }

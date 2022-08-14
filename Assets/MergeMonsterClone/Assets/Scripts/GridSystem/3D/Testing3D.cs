@@ -142,13 +142,17 @@ public class Testing3D : MonoBehaviour
             }
             else
             {
-
+                LevelCreator.Instance.Players.Remove(_pickedCharacter.GetComponent<Character>());
+                LevelCreator.Instance.Players.Remove(tile.TileObject.GetComponent<Character>());
+                LevelCreator.Instance.Players.Add(MergedGO.GetComponent<Character>());
                 Destroy(_pickedCharacter);
                 Destroy(tile.TileObject);
 
+                //add row column to new created character
                 _pickedCharacter = MergedGO;
                 _characterInstance = _pickedCharacter.GetComponentInParent<ICharacterGenerator>();
                 _characterInstance.PositionCharacter(GetTilePosition(tile), _characterInstance.CharacterPrefab.transform.rotation);
+                LevelCreator.Instance.SetCharacterTileID(MergedGO.GetComponent<Character>(), tile.Row, tile.Column);
                 tile.TileObject = MergedGO;
                 SetTileState(_lastPickedTile, true);
             }
