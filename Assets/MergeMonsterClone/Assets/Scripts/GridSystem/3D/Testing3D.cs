@@ -107,6 +107,8 @@ public class Testing3D : MonoBehaviour
                     else
                     {
                         _characterInstance.PositionCharacter(_pickedCharacter, GetTilePosition(tile), Quaternion.identity);
+                        Character ch = _pickedCharacter.GetComponent<Character>();
+                        LevelCreator.Instance.SetCharacterTileID(ch, tile.Row, tile.Column);
                         SetTileState(tile, false);
                         if (_lastPickedTile != tile)
                             SetTileState(_lastPickedTile, true);

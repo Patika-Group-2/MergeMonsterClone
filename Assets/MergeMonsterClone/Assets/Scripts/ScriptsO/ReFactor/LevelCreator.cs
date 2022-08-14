@@ -8,10 +8,18 @@ public class LevelCreator : MonoBehaviour
 
     [SerializeField] List<EnemyDataSO> _levels;
     private EnemyDataSO _currentLevel;
-    private List<Character> _enemies;
+
+    public PlayerDataSO Data;
+
+    [SerializeField] private List<Character> _enemies;
+    [SerializeField] private List<Character> _players;
+
+    public List<Character> Players => _players;
+    public List<Character> Enemies => _enemies;
 
     private int _maxLevel;
     public int MaxLevel { get => _maxLevel; private set => _maxLevel = value; }
+
 
     private void Awake()
     {
@@ -30,39 +38,90 @@ public class LevelCreator : MonoBehaviour
     {
         MaxLevel = _levels.Count;
         _currentLevel = _levels[(GameManager.Instance.CurrentLevel - 1)];
-        _enemies = _currentLevel._enemyList;
+        _players = new List<Character>();
+        _enemies = new List<Character>();
         GenerateEnemies();
+        GeneratePlayers();
+    }
+
+    private void Update()
+    {
+        //This code will be added to OnApplicationQuit()
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            LoadPlayerSO();
+        }
     }
 
     public void GenerateEnemies()
     {
-        for (int i = 0; i < _enemies.Count; i++)
+        _enemies.Clear();
+
+        for (int i = 0; i < _currentLevel._enemyList.Count; i++)
         {
             int row = _currentLevel._rows[i];
             int column = _currentLevel._columns[i];
 
-            Character enemy = _enemies[i];
-            ICharacterGenerator go = enemy.GetComponent<ICharacterGenerator>();
-
             Tile tile = Testing3D.BoardGrid.EnemyTiles[row, column];
-            Vector3 postion = tile.Get3DTilePosition();
 
             if (!tile.IsAvailable)
                 continue;
 
-            Instantiate(enemy);
+            Vector3 postion = tile.Get3DTilePosition();
+
+            Character enemy = Instantiate(_currentLevel._enemyList[i]);
+            ICharacterGenerator go = enemy.GetComponent<ICharacterGenerator>();
+
             go.PositionCharacter(enemy.gameObject, postion, go.CharacterPrefab.transform.rotation);
+            _enemies.Add(enemy);
 
             tile.IsAvailable = false;
         }
     }
 
+    public void GeneratePlayers()
+    {
+        _players.Clear();
+        
+        for (int i = 0; i < Data.PlayerEntities.Count; i++)
+        {
+            int row = Data.Rows[i];
+            int column = Data.Columns[i];
+
+            Tile tile = Testing3D.BoardGrid.PlayerTiles[row, column];
+
+            if (!tile.IsAvailable)
+                continue;
+
+            Vector3 postion = tile.Get3DTilePosition();
+
+            Character player = Instantiate(Data.PlayerEntities[i]);
+            SetCharacterTileID(player, row, column);
+
+            ICharacterGenerator go = player.GetComponent<ICharacterGenerator>();
+            go.PositionCharacter(player.gameObject, postion, go.CharacterPrefab.transform.rotation);
+
+            _players.Add(player);
+
+            tile.IsAvailable = false;
+        }
+    }
+
+    public void SetCharacterTileID(Character ch, int row, int column)
+    {
+        ch.Row = row;
+        ch.Column = column;
+    }
+
+    //This func will be invoked with Win or Lose Screen Buttons
     public void SetLevel()
     {
         _currentLevel = _levels[GameManager.Instance.CurrentLevel - 1];
-        _enemies = _currentLevel._enemyList;
         MakeEnemyTilesAvailable();
+        MakePlayerTilesAvailable();
+        ClearBoard();
         GenerateEnemies();
+        GeneratePlayers();
     }
 
     public void MakeEnemyTilesAvailable()
@@ -70,6 +129,54 @@ public class LevelCreator : MonoBehaviour
         foreach (var tile in Testing3D.BoardGrid.EnemyTiles)
         {
             tile.IsAvailable = true;
+        }
+    }
+
+    public void MakePlayerTilesAvailable()
+    {
+        foreach (var tile in Testing3D.BoardGrid.PlayerTiles)
+        {
+            tile.IsAvailable = true;
+        }
+    }
+
+    public void ClearPlayerDataOfSO()
+    {
+        Data.Columns.Clear();
+        Data.Rows.Clear();
+        Data.PlayerEntities.Clear();
+    }
+
+    public void LoadPlayerSO()
+    {
+        ClearPlayerDataOfSO();
+
+        foreach (var player in _players)
+        {
+            GameObject prefab = Resources.Load(player.PrefabPath) as GameObject;
+
+            Data.Rows.Add(player.Row);
+            Data.Columns.Add(player.Column);
+            Data.PlayerEntities.Add(prefab.GetComponent<Character>());
+        }
+    }
+    
+    public void ClearBoard()
+    {
+        foreach(var player in _players)
+        {
+            if(player != null)
+            {
+                Destroy(player.gameObject);
+            }
+        }
+
+        foreach(var enemy in _enemies)
+        {
+            if(enemy != null)
+            {
+                Destroy(enemy.gameObject);
+            }
         }
     }
 }

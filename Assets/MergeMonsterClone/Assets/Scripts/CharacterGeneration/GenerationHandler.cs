@@ -33,13 +33,19 @@ public class GenerationHandler : MonoBehaviour
 
     public void GenerateCharacter()
     {
-        foreach (Tile tile in Testing3D.TileList)
+        foreach (Tile tile in Testing3D.BoardGrid.PlayerTiles)
         {
             if (tile.IsAvailable)
             {
                 ICharacterGenerator character = GetComponent<ICharacterGenerator>();
                 GameObject characterGO = character.GenerateCharacter();
+
                 character.PositionCharacter(characterGO, GetTilePosition(tile), character.CharacterPrefab.transform.rotation);
+                Character ch = characterGO.GetComponent<Character>();
+
+                LevelCreator.Instance.SetCharacterTileID(ch, tile.Row, tile.Column);
+                LevelCreator.Instance.Players.Add(ch);
+
                 tile.IsAvailable = false;
                 return;
             }

@@ -18,8 +18,8 @@ public class MeleeGenerator : MonoBehaviour, ICharacterGenerator
     public GameObject GenerateCharacter()
     {
         GameObject go = Instantiate(CharacterPrefab);
-        MeleeGenerator melee = go.AddComponent<MeleeGenerator>();
-        melee.CharacterPrefab = CharacterPrefab;
+        //MeleeGenerator melee = go.AddComponent<MeleeGenerator>();
+        //melee.CharacterPrefab = CharacterPrefab;
         return go;
     }
 }

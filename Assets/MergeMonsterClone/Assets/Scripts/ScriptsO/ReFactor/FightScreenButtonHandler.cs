@@ -6,6 +6,7 @@ public class FightScreenButtonHandler : MonoBehaviour
     {
         EntityManager.Instance.SetEntityList();
         GameManager.Instance.SetRunningTrue();
+        LevelCreator.Instance.LoadPlayerSO();
     }
 
     //this method will be deleted later. Just for test
@@ -13,4 +14,6 @@ public class FightScreenButtonHandler : MonoBehaviour
     {
         LevelCreator.Instance.SetLevel();
     }
+
+
 }
