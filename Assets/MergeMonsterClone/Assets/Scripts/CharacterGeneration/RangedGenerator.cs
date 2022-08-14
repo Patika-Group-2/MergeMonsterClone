@@ -18,11 +18,6 @@ public class RangedGenerator : MonoBehaviour, ICharacterGenerator
     public GameObject GenerateCharacter()
     {
         GameObject go = Instantiate(CharacterPrefab);
-<<<<<<< HEAD
-        //RangedGenerator ranged = go.AddComponent<RangedGenerator>();
-        //ranged.CharacterPrefab = CharacterPrefab;
-=======
->>>>>>> 9aac39cc77041f85a515704b8e844507831aa8a9
         return go;
     }
 }

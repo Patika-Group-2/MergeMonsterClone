@@ -67,7 +67,6 @@ public class LevelCreator : MonoBehaviour
             if (!tile.IsAvailable)
                 continue;
 
-<<<<<<< HEAD
             Vector3 postion = tile.Get3DTilePosition();
 
             Character enemy = Instantiate(_currentLevel._enemyList[i]);
@@ -75,10 +74,6 @@ public class LevelCreator : MonoBehaviour
 
             go.PositionCharacter(enemy.gameObject, postion, go.CharacterPrefab.transform.rotation);
             _enemies.Add(enemy);
-=======
-            Instantiate(enemy);
-            go.PositionCharacter(postion, go.CharacterPrefab.transform.rotation);
->>>>>>> 9aac39cc77041f85a515704b8e844507831aa8a9
 
             tile.IsAvailable = false;
         }

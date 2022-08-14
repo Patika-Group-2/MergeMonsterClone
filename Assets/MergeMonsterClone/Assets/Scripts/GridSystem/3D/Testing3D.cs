@@ -114,13 +114,9 @@ public class Testing3D : MonoBehaviour
                     }
                     else
                     {
-<<<<<<< HEAD
-                        _characterInstance.PositionCharacter(_pickedCharacter, GetTilePosition(tile), Quaternion.identity);
+                        _characterInstance.PositionCharacter(GetTilePosition(tile), _characterInstance.CharacterPrefab.transform.rotation);
                         Character ch = _pickedCharacter.GetComponent<Character>();
                         LevelCreator.Instance.SetCharacterTileID(ch, tile.Row, tile.Column);
-=======
-                        _characterInstance.PositionCharacter(GetTilePosition(tile), _characterInstance.CharacterPrefab.transform.rotation);
->>>>>>> 9aac39cc77041f85a515704b8e844507831aa8a9
                         SetTileState(tile, false);
                         tile.TileObject = _pickedCharacter;
                         if (_lastPickedTile != tile)
