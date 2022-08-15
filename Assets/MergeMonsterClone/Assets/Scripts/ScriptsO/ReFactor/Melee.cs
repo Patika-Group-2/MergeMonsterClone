@@ -43,5 +43,4 @@ public class Melee : Character
     {
         _findTarget.DelistOnDestroy();
     }
-
 }

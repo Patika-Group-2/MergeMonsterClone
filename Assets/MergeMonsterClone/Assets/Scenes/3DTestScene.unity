@@ -603,6 +603,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b2a64be5fcb3d414d92c4cc725fab293, type: 2}
   - {fileID: 11400000, guid: cede8cee85a4c1446a920b5b36962820, type: 2}
   - {fileID: 11400000, guid: 454613838a6bdbd4f90f558b43ebbae5, type: 2}
+  Data: {fileID: 11400000, guid: 879b47dba09af0b48ab53d7d9838312e, type: 2}
+  _enemies: []
+  _players: []
 --- !u!1 &627625329
 GameObject:
   m_ObjectHideFlags: 0
@@ -1240,7 +1243,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1065372304}
-        m_TargetAssemblyTypeName: GenerationManager, Assembly-CSharp
+        m_TargetAssemblyTypeName: GenerationHandler, Assembly-CSharp
         m_MethodName: GenerateCharacter
         m_Mode: 1
         m_Arguments:

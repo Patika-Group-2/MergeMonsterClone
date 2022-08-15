@@ -407,7 +407,7 @@ GameObject:
   - component: {fileID: 4161090162386440874}
   - component: {fileID: 4161090162386440872}
   - component: {fileID: 4161090162386440873}
-  - component: {fileID: -852194134207326315}
+  - component: {fileID: -7399424692124062976}
   m_Layer: 6
   m_Name: Ranged
   m_TagString: Player
@@ -423,7 +423,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4161090162386440867}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.559999, y: 0.04, z: -10.620001}
+  m_LocalPosition: {x: 0.5, y: 1, z: 6.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -508,6 +508,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e4b6655ef8e86b40bbf36c195ca9c2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _prefabPath: Prefabs/PrebasO/Ranged
+  Row: 0
+  Column: 0
   _findTarget: {fileID: 0}
   _health: {fileID: 0}
   _attack: {fileID: 0}
@@ -586,7 +589,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rangedAnimator: {fileID: 0}
---- !u!114 &-852194134207326315
+--- !u!114 &-7399424692124062976
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

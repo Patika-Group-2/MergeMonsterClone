@@ -199,8 +199,8 @@ MonoBehaviour:
   _findTarget: {fileID: 0}
   _health: {fileID: 0}
   _attack: {fileID: 0}
-  row: 0
-  column: 0
+  Row: 0
+  Column: 0
 --- !u!114 &5701731231530134866
 MonoBehaviour:
   m_ObjectHideFlags: 0

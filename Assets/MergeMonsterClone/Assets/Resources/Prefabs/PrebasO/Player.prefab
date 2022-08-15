@@ -196,6 +196,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f19c1059322264f41b0c1a8293792301, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _prefabPath: Prefabs/PrebasO/Player
+  Row: 0
+  Column: 0
   _findTarget: {fileID: 0}
   _health: {fileID: 0}
   _attack: {fileID: 0}

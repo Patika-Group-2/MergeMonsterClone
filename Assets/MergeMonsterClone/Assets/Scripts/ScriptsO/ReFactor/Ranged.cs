@@ -34,5 +34,4 @@ public class Ranged : Character
     {
         _findTarget.DelistOnDestroy();
     }
-
 }
