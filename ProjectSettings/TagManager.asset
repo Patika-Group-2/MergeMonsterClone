@@ -19,10 +19,10 @@ TagManager:
   - Draggable
   - Ground
   - Tile
-  - 
-  - 
-  - 
-  - 
+  - ShopUI
+  - FightUI
+  - MergeUI
+  - Enemy
   - 
   - 
   - 

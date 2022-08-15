@@ -5,7 +5,7 @@ public class GenerationHandler : MonoBehaviour
 {
     void Start()
     {
-        Testing3D.TileList = GetTileList();
+        Testing3D.AllyTileList = GetTileList();
     }
 
     List<Tile> GetTileList()
@@ -33,7 +33,7 @@ public class GenerationHandler : MonoBehaviour
 
     public void GenerateCharacter()
     {
-        foreach (Tile tile in Testing3D.TileList)
+        foreach (Tile tile in Testing3D.AllyTileList)
         {
             if (tile.IsAvailable)
             {

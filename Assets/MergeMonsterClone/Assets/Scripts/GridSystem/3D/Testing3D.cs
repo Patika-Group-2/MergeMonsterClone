@@ -22,7 +22,9 @@ public class Testing3D : MonoBehaviour
     static BoardGrid3D<Tile> _boardGrid;
 
     public static BoardGrid3D<Tile> BoardGrid => _boardGrid;
-    public static List<Tile> TileList { get; set; }
+
+    public static List<Tile> AllyTileList { get; set; }
+    public static List<Tile> EnemyTileList { get; set; }
 
 
     void Awake()
