@@ -11,6 +11,8 @@ public class BankManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI _text;
     [SerializeField] float currentBalance;
     public float CurrentBalance { get { return currentBalance; } }
+    [SerializeField] float currentLoseWinMoney;
+    public float CurrentLoseWinMoney { get { return currentLoseWinMoney; } }
 
     private void Awake() 
     {
@@ -28,6 +30,10 @@ public class BankManager : MonoBehaviour
     public void Deposit(float amount)
     {
         currentBalance += Mathf.Round(amount);
+    }
+    public void WinMoney(int amount)
+    {
+        currentLoseWinMoney += Mathf.Abs(amount);
     }
 
 }
