@@ -20,6 +20,12 @@ public class LevelCreator : MonoBehaviour
     private int _maxLevel;
     public int MaxLevel { get => _maxLevel; private set => _maxLevel = value; }
 
+    private int _playerCountAtBeginning;
+    private int _playerCountAtEnd;
+
+    public int PlayerCountAtBeginning { get => _playerCountAtBeginning; private set => _playerCountAtBeginning = value; }
+    public int PlayerCountAtEnd { get => _playerCountAtEnd; private set => _playerCountAtEnd = value; }
+
 
     private void Awake()
     {
@@ -179,5 +185,14 @@ public class LevelCreator : MonoBehaviour
                 Destroy(enemy.gameObject);
             }
         }
+    }
+
+    public void SetPlayerCountAtBegin()
+    {
+        PlayerCountAtBeginning = _players.Count;
+    }
+    public void SetPlayerCountAtEnd()
+    {
+        PlayerCountAtEnd = _players.Count;
     }
 }
