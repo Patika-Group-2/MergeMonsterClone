@@ -18,6 +18,13 @@ public class LevelCreator : MonoBehaviour
     public List<Character> Enemies => _enemies;
 
     private int _maxLevel;
+
+    private int _playerCountAtBeginning;
+    private int _playerCountAtEnd;
+
+    public int PlayerCountAtBeginning { get => _playerCountAtBeginning; private set => _playerCountAtBeginning = value; }
+    public int PlayerCountAtEnd { get => _playerCountAtEnd; private set => _playerCountAtEnd = value; }
+
     public int MaxLevel { get => _maxLevel; private set => _maxLevel = value; }
 
 
@@ -50,6 +57,8 @@ public class LevelCreator : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.A))
         {
             LoadPlayerSO();
+            //Save level to PlayerPrefs
+            //Set coin to playerprefs
         }
     }
 
@@ -179,5 +188,14 @@ public class LevelCreator : MonoBehaviour
                 Destroy(enemy.gameObject);
             }
         }
+    }
+
+    public void SetPlayerCountAtBegin()
+    {
+        PlayerCountAtBeginning = _players.Count;
+    }
+    public void SetPlayerCountAtEnd()
+    {
+        PlayerCountAtEnd = _players.Count;
     }
 }

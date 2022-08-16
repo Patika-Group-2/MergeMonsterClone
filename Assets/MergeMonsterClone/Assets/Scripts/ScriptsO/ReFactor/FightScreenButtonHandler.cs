@@ -7,13 +7,6 @@ public class FightScreenButtonHandler : MonoBehaviour
         EntityManager.Instance.SetEntityList();
         GameManager.Instance.SetRunningTrue();
         LevelCreator.Instance.LoadPlayerSO();
+        LevelCreator.Instance.SetPlayerCountAtBegin();
     }
-
-    //this method will be deleted later. Just for test
-    public void SetCurrentLevel()
-    {
-        LevelCreator.Instance.SetLevel();
-    }
-
-
 }

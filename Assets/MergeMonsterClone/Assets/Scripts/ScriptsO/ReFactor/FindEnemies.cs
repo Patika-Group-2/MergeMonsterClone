@@ -5,6 +5,7 @@ public class FindEnemies : FindTarget
     public override void DelistOnDestroy()
     {
         EntityManager.Instance.Players.Remove(this.gameObject);
+        LevelCreator.Instance.Players.Remove(GetComponent<Character>());
     }
 
     public override void FindTargets()
