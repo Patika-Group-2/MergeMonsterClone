@@ -1,5 +1,4 @@
 using UnityEngine;
-using System;
 
 public class GameManager : MonoBehaviour
 {
@@ -8,10 +7,6 @@ public class GameManager : MonoBehaviour
     private int _currentLevel = 1;
     public bool GameIsRunning { get => _gameIsRunning; private set => _gameIsRunning = value; }
     public int CurrentLevel { get => _currentLevel; private set => _currentLevel = value; }
-
-    public event Action OnWin;
-    public event Action OnLose;
-
 
     private void Awake()
     {
@@ -43,9 +38,8 @@ public class GameManager : MonoBehaviour
 
         if (EntityManager.Instance.Enemies.Count == 0)
         {
-            LevelCreator.Instance.SetPlayerCountAtEnd();
             //Instantiate or enable Win Screen
-            OnWin?.Invoke();
+
             if(CurrentLevel < LevelCreator.Instance.MaxLevel)
             CurrentLevel++;
 
@@ -57,7 +51,6 @@ public class GameManager : MonoBehaviour
         else if (EntityManager.Instance.Players.Count == 0)
         {
             //Instantiate or enable Lose Screen
-            OnLose?.Invoke();
             GameIsRunning = false;
             EntityManager.Instance.ClearLists();
             return;
