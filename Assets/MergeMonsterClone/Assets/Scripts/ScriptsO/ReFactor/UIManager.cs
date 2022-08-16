@@ -39,7 +39,7 @@ public class UIManager : MonoBehaviour
     public void LoadLoseScreen()
     {
         Instantiate(_loseScreenPrefab);
-        //Send parameters for text and images
+        //Send parameters for text
     }
 
 }
