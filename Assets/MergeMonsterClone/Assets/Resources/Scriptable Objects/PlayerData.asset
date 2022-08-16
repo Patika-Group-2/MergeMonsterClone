@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: PlayerData
   m_EditorClassIdentifier: 
   PlayerEntities:
-  - {fileID: 5701731231530134826, guid: 6fb4aa6473b927945adbfe1ec703e534, type: 3}
-  - {fileID: 5701731231530134826, guid: 6fb4aa6473b927945adbfe1ec703e534, type: 3}
-  - {fileID: 5701731231530134826, guid: f9352140f2dc0e54584e422c0af3ab00, type: 3}
+  - {fileID: 3736831784765346362, guid: f92baba29ecbb224391d7414436c1d50, type: 3}
+  - {fileID: 3736831784765346362, guid: f92baba29ecbb224391d7414436c1d50, type: 3}
+  - {fileID: 6872691079389538732, guid: 4a11a8ee4d2a39048aaa8808e4953b94, type: 3}
   Rows: 000000000200000002000000
   Columns: 070000000100000004000000

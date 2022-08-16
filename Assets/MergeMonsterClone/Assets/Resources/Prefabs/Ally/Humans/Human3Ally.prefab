@@ -735,7 +735,7 @@ GameObject:
   - component: {fileID: 8606926092198309034}
   - component: {fileID: 3776888640529932060}
   m_Layer: 6
-  m_Name: Human3
+  m_Name: Human3Ally
   m_TagString: HumanLevel2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -773,7 +773,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f19c1059322264f41b0c1a8293792301, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _prefabPath: Prefabs/Humans/Human3
+  _prefabPath: Prefabs/Ally/Humans/Human3Ally
   Row: 0
   Column: 0
   _findTarget: {fileID: 0}

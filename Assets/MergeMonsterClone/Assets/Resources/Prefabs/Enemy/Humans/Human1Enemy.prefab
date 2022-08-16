@@ -17,7 +17,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2251372301342761, guid: d5f0a438079dcb843a58e45cf411cc6b, type: 3}
       propertyPath: m_TagString
-      value: HumanLevel0
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 271226227671874418, guid: d5f0a438079dcb843a58e45cf411cc6b, type: 3}
       propertyPath: m_Layer
