@@ -139,11 +139,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e4b6655ef8e86b40bbf36c195ca9c2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _prefabPath: Prefabs/Dragons/Green_Dragon_4
+  Row: 0
+  Column: 0
   _findTarget: {fileID: 0}
   _health: {fileID: 0}
   _attack: {fileID: 0}
-  row: 0
-  column: 0
 --- !u!114 &7962669154208295869
 MonoBehaviour:
   m_ObjectHideFlags: 0
