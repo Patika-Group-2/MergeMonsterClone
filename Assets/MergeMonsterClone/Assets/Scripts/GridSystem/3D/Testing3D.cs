@@ -32,7 +32,7 @@ public class Testing3D : MonoBehaviour
         if (tileContainer == null)
             tileContainer = new GameObject("TileContainer");
 
-        for (int i = 0; i < _boardGrid.GridWidth; i++)
+        for (int i = 0; i < _boardGrid.GridWidth / 2; i++)
         {
             for (int j = 0; j < _boardGrid.GridHeight; j++)
             {

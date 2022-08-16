@@ -8,5 +8,6 @@ public class FightScreenButtonHandler : MonoBehaviour
         GameManager.Instance.SetRunningTrue();
         LevelCreator.Instance.LoadPlayerSO();
         LevelCreator.Instance.SetPlayerCountAtBegin();
+        UIManager.Instance.ResetCanvas();
     }
 }

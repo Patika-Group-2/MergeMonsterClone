@@ -6432,7 +6432,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e4b6655ef8e86b40bbf36c195ca9c2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _prefabPath: Prefabs/Dragons/Blue_Dragon_1
+  _prefabPath: Prefabs/Ally/Dragons/Blue_Dragon_1
   Row: 0
   Column: 0
   _findTarget: {fileID: 0}
