@@ -22,8 +22,24 @@ public class SoundManager : MonoBehaviour
         Source = GetComponent<AudioSource>();
     }
 
+    private void Start()
+    {
+        GameManager.Instance.OnLose += StopSound;
+        GameManager.Instance.OnWin += StopSound;
+    }
+
     public void PlaySound(AudioClip clip)
     {
         Source.PlayOneShot(clip);
+    }
+
+    public void StopSound()
+    {
+        Source.Stop();
+    }
+
+    public void ChangeVolume(float volume)
+    {
+        AudioListener.volume = volume;
     }
 }
