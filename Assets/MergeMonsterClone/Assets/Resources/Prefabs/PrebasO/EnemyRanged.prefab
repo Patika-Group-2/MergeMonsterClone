@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4161090161352678861}
   - component: {fileID: 4161090161352678835}
   - component: {fileID: 4161090161352678834}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 4161090161416479537}
   - component: {fileID: 4161090161416479536}
   - component: {fileID: 4161090161416479538}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: HealtBar (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -205,7 +205,7 @@ GameObject:
   - component: {fileID: 4161090161596974305}
   - component: {fileID: 4161090161596974304}
   - component: {fileID: 4161090161596974307}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -303,7 +303,7 @@ GameObject:
   - component: {fileID: 4161090161989560536}
   - component: {fileID: 4161090161989560539}
   - component: {fileID: 4161090161989560538}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -408,7 +408,8 @@ GameObject:
   - component: {fileID: 4161090162386440873}
   - component: {fileID: 4071872369017875603}
   - component: {fileID: 70350569247160979}
-  m_Layer: 0
+  - component: {fileID: -6095674406387038579}
+  m_Layer: 12
   m_Name: EnemyRanged
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -602,6 +603,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _characterPrefab: {fileID: 4161090162386440867}
+--- !u!114 &-6095674406387038579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4161090162386440867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65ed38d0560a7d8409a5d20576c1fdbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dropCoin: 100
+  loseMoneyHolder: 0
 --- !u!1 &4161090162623458936
 GameObject:
   m_ObjectHideFlags: 0
@@ -612,7 +627,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4161090162623458937}
   - component: {fileID: 4161090162623458942}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -658,7 +673,7 @@ GameObject:
   - component: {fileID: 4161090162782374927}
   - component: {fileID: 4161090162782374926}
   - component: {fileID: 4161090162782374921}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Foreground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
