@@ -8,6 +8,7 @@ public class WinScreenHandler : MonoBehaviour
     [SerializeField] private TMP_Text _earnedGold;
     [SerializeField] private TMP_Text _totalGold;
     [SerializeField] private AudioClip _winSound;
+    
 
     private void Start()
     {

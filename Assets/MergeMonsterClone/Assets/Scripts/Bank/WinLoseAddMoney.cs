@@ -9,25 +9,31 @@ public class WinLoseAddMoney : MonoBehaviour
     private EnemyDataSO _currentLevel;
     private int _maxLevel;
     public float _winWin;
-
+    
     CoinDropManager _coinDrop;
     public int LevelMax { get => _maxLevel; private set => _maxLevel = value; }
-    public float WinWin { get { return _winWin; } }
+    //public float WinWin { get { return _winWin; } }
+   
 
 
-    private void Start()
-    {
+    private void Start() {
+        
         LevelMax = _levels.Count;
-        _currentLevel = _levels[(GameManager.Instance.CurrentLevel - 1)];
+        _currentLevel = _levels[(GameManager.Instance.CurrentLevel-1)];
         _winWin = _currentLevel._coinWins;
-    }
+        
 
+    }
     public void AddMoney()
     {
         _currentLevel = _levels[GameManager.Instance.CurrentLevel - 1];
         _winWin = _currentLevel._coinWins;
         LevelMax = _levels.Count;
         _bankManager.Deposit(_winWin);
+        
+
+        Debug.Log(_winWin);
+
     }
 
 
