@@ -37,7 +37,7 @@ public class Health : MonoBehaviour
     }
     private void DieEnemy()
     {
-        _enemyDropCoin.CoinDrop();
+        _enemyDropCoin.AddCoin();
         Destroy(gameObject);
     }
     

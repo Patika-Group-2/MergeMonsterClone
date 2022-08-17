@@ -6,7 +6,7 @@ public class CoinDropManager : MonoBehaviour
 {   
     [SerializeField] int _dropCoin;
     
-    [SerializeField] public int loseMoneyHolder;
+    [SerializeField] public int loseMoneyHolder = 500;
     BankManager _bankManager;
     
 
@@ -15,14 +15,10 @@ public class CoinDropManager : MonoBehaviour
         
         
     }
-    public void CoinDrop()
-    {
-        AddCoin();
-        Debug.Log(loseMoneyHolder);
-    }
     public void AddCoin()
     {
         loseMoneyHolder = BankManager.lostCoin += _dropCoin;
+        Debug.Log(loseMoneyHolder);
     }
 
     public void AddTotalCoin()
