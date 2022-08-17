@@ -53,7 +53,6 @@ public class UIManager : MonoBehaviour
 
     public void GoToFightScreen()
     {
-        
         LevelCreator.Instance.LoadPlayerSO();
         LevelCreator.Instance.SetLevel();
         StartCoroutine(ShowCor(_fightCam, _fightCanvas));
