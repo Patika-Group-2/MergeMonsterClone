@@ -26,7 +26,7 @@ public class LoseScreenHandler : MonoBehaviour
     }
 
     //this func will added after bank system done
-    public void SetTexts(int level, int reward, int total)
+    public void SetTexts(int level, int reward, float total)
     {
         _level.text = level.ToString();
         _earnedGold.text = reward.ToString();

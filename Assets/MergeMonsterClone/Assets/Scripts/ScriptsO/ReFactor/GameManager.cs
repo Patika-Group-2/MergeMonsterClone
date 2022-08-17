@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] WinLoseAddMoney _wLan;
 
-    
+    [SerializeField] CoinDropManager _cDM;
 
     private void Awake()
     {
@@ -59,6 +59,7 @@ public class GameManager : MonoBehaviour
 
         else if (EntityManager.Instance.Players.Count == 0)
         {
+            _cDM.AddTotalCoin();
             //Instantiate or enable Lose Screen
             OnLose?.Invoke();
             GameIsRunning = false;

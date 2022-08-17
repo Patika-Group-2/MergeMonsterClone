@@ -14,9 +14,11 @@ public class UIManager : MonoBehaviour
     [SerializeField] Canvas _shopCanvas, _fightCanvas, _mergeCanvas;
     [SerializeField] PostProcessVolume _volume;
     [SerializeField] BankManager _bankManager;
+    [SerializeField] WinLoseAddMoney _wLAM;
+    [SerializeField] CoinDropManager _cDM;
 
     AutoExposure _autoExposure;
-    [SerializeField] WinLoseAddMoney _wLAM;
+    
 
     private void Awake()
     {
@@ -53,7 +55,9 @@ public class UIManager : MonoBehaviour
 
     public void LoadLoseScreen()
     {
-        Instantiate(_loseScreenPrefab);
+        GameObject _gameOBjectLose = Instantiate(_loseScreenPrefab);
+        LoseScreenHandler _lSH = _gameOBjectLose.GetComponent<LoseScreenHandler>();
+        _lSH.SetTexts(GameManager.Instance.CurrentLevel,_cDM.loseMoneyHolder,_bankManager.currentBalance);
         //Send parameters for text and images
     }
 
