@@ -151,6 +151,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 12
       objectReference: {fileID: 0}
+    - target: {fileID: 4756293912831191439, guid: d5f0a438079dcb843a58e45cf411cc6b, type: 3}
+      propertyPath: _enemyDropCoin
+      value: 
+      objectReference: {fileID: 3085124668156471829, guid: 1d5081e50ac34ab4db3a3744b717374d, type: 3}
     - target: {fileID: 4761345770608434085, guid: d5f0a438079dcb843a58e45cf411cc6b, type: 3}
       propertyPath: m_Layer
       value: 12
@@ -248,6 +252,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dropCoin: 100
+  loseMoneyHolder: 0
 --- !u!114 &14603053946369779
 MonoBehaviour:
   m_ObjectHideFlags: 0

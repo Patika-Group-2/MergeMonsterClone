@@ -247,6 +247,7 @@ MonoBehaviour:
   _maxHitPoint: 100
   _hitPoints: 0
   _healthBar: {fileID: 0}
+  _enemyDropCoin: {fileID: 3085124668156471829, guid: 1d5081e50ac34ab4db3a3744b717374d, type: 3}
 --- !u!95 &5701731231530134865
 Animator:
   serializedVersion: 4
@@ -335,7 +336,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65ed38d0560a7d8409a5d20576c1fdbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dropCoin: 125
+  _dropCoin: 100
+  loseMoneyHolder: 0
 --- !u!1 &5701731232462089340
 GameObject:
   m_ObjectHideFlags: 0

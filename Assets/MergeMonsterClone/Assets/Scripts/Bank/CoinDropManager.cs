@@ -5,17 +5,16 @@ using UnityEngine;
 public class CoinDropManager : MonoBehaviour
 {   
     [SerializeField] int _dropCoin;
+    
     [SerializeField] public int loseMoneyHolder;
     BankManager _bankManager;
+    
 
-   
-
-    public int CurrentDropCoin { get { return _dropCoin;}}
     private void Awake() {
         _bankManager = GetComponent<BankManager>();
         
+        
     }
-
     public void CoinDrop()
     {
         AddCoin();
