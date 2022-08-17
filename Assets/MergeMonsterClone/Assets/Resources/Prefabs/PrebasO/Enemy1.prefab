@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 5701731231249132515}
   - component: {fileID: 5701731231249132513}
   - component: {fileID: 5701731231249132514}
-  m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,9 +95,6 @@ GameObject:
   - component: {fileID: 5701731231530134864}
   - component: {fileID: 5775909000362790986}
   - component: {fileID: 2833944610594181712}
-  - component: {fileID: 7118877592561464198}
-  - component: {fileID: 6306852925262450591}
-  m_Layer: 0
   m_Name: Enemy1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -198,12 +194,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f19c1059322264f41b0c1a8293792301, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _prefabPath: 
-  Row: 0
-  Column: 0
   _findTarget: {fileID: 0}
   _health: {fileID: 0}
   _attack: {fileID: 0}
+  Row: 0
+  Column: 0
 --- !u!114 &5701731231530134866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -247,7 +242,6 @@ MonoBehaviour:
   _maxHitPoint: 100
   _hitPoints: 0
   _healthBar: {fileID: 0}
-  _enemyDropCoin: {fileID: 3085124668156471829, guid: 1d5081e50ac34ab4db3a3744b717374d, type: 3}
 --- !u!95 &5701731231530134865
 Animator:
   serializedVersion: 4
@@ -324,20 +318,6 @@ MonoBehaviour:
   _findTarget: {fileID: 0}
   _health: {fileID: 0}
   _attack: {fileID: 0}
---- !u!114 &6306852925262450591
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5701731231530134827}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65ed38d0560a7d8409a5d20576c1fdbd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _dropCoin: 100
-  loseMoneyHolder: 0
 --- !u!1 &5701731232462089340
 GameObject:
   m_ObjectHideFlags: 0
@@ -349,7 +329,6 @@ GameObject:
   - component: {fileID: 5701731232462089337}
   - component: {fileID: 5701731232462089338}
   - component: {fileID: 5701731232462089339}
-  m_Layer: 0
   m_Name: Foreground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -427,7 +406,6 @@ GameObject:
   - component: {fileID: 5701731233014249330}
   - component: {fileID: 5701731233014249331}
   - component: {fileID: 5701731233014249333}
-  m_Layer: 0
   m_Name: HealtBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -543,7 +521,6 @@ GameObject:
   - component: {fileID: 5701731233047749390}
   - component: {fileID: 5701731233047749391}
   - component: {fileID: 5701731233047749376}
-  m_Layer: 0
   m_Name: Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
