@@ -13,11 +13,14 @@ public class UIManager : MonoBehaviour
     [SerializeField] Camera _shopCam, _fightCam, _mergeCam;
     [SerializeField] Canvas _shopCanvas, _fightCanvas, _mergeCanvas;
     [SerializeField] PostProcessVolume _volume;
+    [SerializeField] BankManager _bankManager;
 
     AutoExposure _autoExposure;
+    [SerializeField] WinLoseAddMoney _wLAM;
 
     private void Awake()
     {
+  
         if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
@@ -33,6 +36,7 @@ public class UIManager : MonoBehaviour
     private void Start()
     {
         _volume.profile.TryGetSettings(out _autoExposure);
+        
 
         GameManager.Instance.OnWin += LoadWinScreen;
         GameManager.Instance.OnLose += LoadLoseScreen;
@@ -41,7 +45,9 @@ public class UIManager : MonoBehaviour
 
     public void LoadWinScreen()
     {
-        Instantiate(_winScreenPrefab);
+        GameObject _gameObject = Instantiate(_winScreenPrefab);
+        WinScreenHandler _wSH = _gameObject.GetComponent<WinScreenHandler>();
+        _wSH.SetTexts(GameManager.Instance.CurrentLevel,_wLAM._winWin, _bankManager.currentBalance);
         //Send parameters for text
     }
 
