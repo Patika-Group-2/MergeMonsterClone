@@ -14,14 +14,14 @@ public class LoseScreenHandler : MonoBehaviour
     }
     public void ReplyButton()
     {
-        UIManager.Instance.GoToFightScreen();
+        UIManager.Instance.GoToFightDirecetly();
         Destroy(gameObject);
         //After destroy make transition effect
     }
 
     public void ShopButton()
     {
-        UIManager.Instance.GoToShopScreen();
+        UIManager.Instance.GoToShopDirecetly();
         Destroy(gameObject);
     }
 

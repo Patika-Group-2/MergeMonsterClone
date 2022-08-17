@@ -16,13 +16,13 @@ public class WinScreenHandler : MonoBehaviour
     }
     public void NextButton()
     {
-        UIManager.Instance.GoToFightScreen();
+        UIManager.Instance.GoToFightDirecetly();
         Destroy(gameObject);
     }
 
     public void ShopButton()
     {
-        UIManager.Instance.GoToShopScreen();
+        UIManager.Instance.GoToShopDirecetly();
         Destroy(gameObject);
     }
 
