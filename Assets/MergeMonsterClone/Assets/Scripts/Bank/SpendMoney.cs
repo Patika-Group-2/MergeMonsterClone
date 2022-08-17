@@ -9,15 +9,20 @@ public class SpendMoney : MonoBehaviour
     [SerializeField] float currentSpend;
     [SerializeField] Button _btn;
     public float CurrentSpend { get { return currentSpend; } }
+
     BankManager bankManager;
-    private void Awake() {
+
+
+    private void Awake()
+    {
         bankManager = GetComponent<BankManager>();
         _btn = GetComponent<Button>();
         currentSpend = firstSpend;
     }
+
     public void BuyCharacter()
     {
-        if(bankManager.CurrentBalance < currentSpend)
+        if (bankManager.currentBalance < currentSpend)
         {
             _btn.enabled = false;
         }
@@ -31,7 +36,6 @@ public class SpendMoney : MonoBehaviour
 
     void CostMoney()
     {
-        currentSpend = Mathf.Round(currentSpend + currentSpend * 25 / 100) ;
-        Debug.Log(currentSpend);
+        currentSpend = Mathf.Round(currentSpend + currentSpend * 25 / 100);
     }
 }
