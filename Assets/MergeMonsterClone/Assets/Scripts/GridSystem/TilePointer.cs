@@ -12,7 +12,7 @@ public class TilePointer : MonoBehaviour
         if (_tileSprite != null)
         {
             SpriteRenderer spriteRenderer = _tileSprite.GetComponent<SpriteRenderer>();
-            spriteRenderer.color = Color.white;
+            spriteRenderer.color = new Color(1, 1, 1, .3f);
             _tileSprite = null;
         }
 

@@ -10,6 +10,7 @@ public class BankManager : MonoBehaviour
     public float costMoney = 100;
     [SerializeField] TextMeshProUGUI _text;
     [SerializeField] float currentBalance;
+    public static int lostCoin;
     public float CurrentBalance { get { return currentBalance; } }
 
     private void Awake() 

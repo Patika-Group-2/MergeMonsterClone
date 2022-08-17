@@ -16,14 +16,14 @@ public class WinScreenHandler : MonoBehaviour
     }
     public void NextButton()
     {
-        LevelCreator.Instance.SetLevel();
+        UIManager.Instance.GoToFightScreen();
         Destroy(gameObject);
-        //After destroy make transition effect
     }
 
     public void ShopButton()
     {
-        //
+        UIManager.Instance.GoToShopScreen();
+        Destroy(gameObject);
     }
 
     //this func will added after bank system done

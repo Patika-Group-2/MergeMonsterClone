@@ -6,6 +6,7 @@ public class Movement : MonoBehaviour
     [SerializeField] private float _attackRange;
     [SerializeField] float _movementSpeed;
     public event Action<Transform> OnTargetClose;
+    public event Action OnMove;
     private float _distance;
 
     public void Move(Transform target)
@@ -19,6 +20,7 @@ public class Movement : MonoBehaviour
         if (_distance > _attackRange)
         {
             transform.LookAt(target);
+            OnMove?.Invoke();
 
             transform.position = Vector3.MoveTowards(transform.position,
                target.position, Time.deltaTime * _movementSpeed);

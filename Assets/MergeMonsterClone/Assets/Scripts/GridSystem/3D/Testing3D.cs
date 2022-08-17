@@ -22,6 +22,7 @@ public class Testing3D : MonoBehaviour
     static BoardGrid3D<Tile> _boardGrid;
 
     public static BoardGrid3D<Tile> BoardGrid => _boardGrid;
+
     public static List<Tile> TileList { get; set; }
 
 
@@ -32,7 +33,7 @@ public class Testing3D : MonoBehaviour
         if (tileContainer == null)
             tileContainer = new GameObject("TileContainer");
 
-        for (int i = 0; i < _boardGrid.GridWidth; i++)
+        for (int i = 0; i < _boardGrid.GridWidth / 2; i++)
         {
             for (int j = 0; j < _boardGrid.GridHeight; j++)
             {
@@ -45,6 +46,9 @@ public class Testing3D : MonoBehaviour
 
     void Update()
     {
+        if (Camera.main.name != "MergeCamera")
+            return;
+
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         Tile tile;
 
@@ -167,13 +171,13 @@ public class Testing3D : MonoBehaviour
             switch (mergeTag)
             {
                 case ("HumanLevel0"):
-                    MergedCharacter = Instantiate(Resources.Load("Prefabs/PrebasO/Player 1") as GameObject);
+                    MergedCharacter = Instantiate(Resources.Load("Prefabs/Ally/Humans/Human2Ally") as GameObject);
                     break;
                 case ("HumanLevel1"):
-                    MergedCharacter = Instantiate(Resources.Load("Prefabs/PrebasO/Player 2") as GameObject);
+                    MergedCharacter = Instantiate(Resources.Load("Prefabs/Ally/Humans/Human3Ally") as GameObject);
                     break;
                 case ("HumanLevel2"):
-                    MergedCharacter = Instantiate(Resources.Load("Prefabs/PrebasO/Player 3") as GameObject);
+                    MergedCharacter = Instantiate(Resources.Load("Prefabs/Ally/Humans/Human4Ally") as GameObject);
                     break;
                 default:
                     MergedCharacter = null;
@@ -185,10 +189,13 @@ public class Testing3D : MonoBehaviour
             switch (mergeTag)
             {
                 case ("HumanLevel0"):
-                    MergedCharacter = Instantiate(Resources.Load("Prefabs/Dragons/Red_Dragon_2") as GameObject);
+                    MergedCharacter = Instantiate(Resources.Load("Prefabs/Ally/Dragons/Red_Dragon_2") as GameObject);
                     break;
                 case ("HumanLevel1"):
-                    MergedCharacter = Instantiate(Resources.Load("Prefabs/Dragons/Orange_Dragon_3") as GameObject);
+                    MergedCharacter = Instantiate(Resources.Load("Prefabs/Ally/Dragons/Orange_Dragon_3") as GameObject);
+                    break;
+                case ("HumanLevel2"):
+                    MergedCharacter = Instantiate(Resources.Load("Prefabs/Ally/Dragons/Green_Dragon_4") as GameObject);
                     break;
                 default:
                     MergedCharacter = null;

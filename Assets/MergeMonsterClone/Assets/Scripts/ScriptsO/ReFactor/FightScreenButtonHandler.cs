@@ -25,6 +25,7 @@ public class FightScreenButtonHandler : MonoBehaviour
         LevelCreator.Instance.LoadPlayerSO();
         LevelCreator.Instance.SetPlayerCountAtBegin();
         SoundManager.Instance.PlaySound(_ambientSound);
+        UIManager.Instance.ResetCanvas();
     }
 
     public void MuteButton()
@@ -44,5 +45,6 @@ public class FightScreenButtonHandler : MonoBehaviour
             _soundSlider.gameObject.SetActive(false);
         else
             _soundSlider.gameObject.SetActive(true);
+        
     }
 }

@@ -44,6 +44,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61351a03c024e1b4f816d1474abfd11b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerTypeCount: 4
   Players: []
   Enemies: []
