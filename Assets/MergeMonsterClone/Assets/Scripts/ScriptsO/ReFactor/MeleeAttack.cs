@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class MeleeAttack : Attack
 {
-    public event Action OnAttack;
     private void Awake()
     {
         GetComponent<Movement>().OnTargetClose += AttackTarget;
@@ -15,7 +14,7 @@ public class MeleeAttack : Attack
 
         if (Time.time >= _nextAttackTime)
         {
-            OnAttack?.Invoke();
+            CallOnAttack();
             Character targetChar = target.gameObject.
                 GetComponent<Character>();
 

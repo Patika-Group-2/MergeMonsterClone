@@ -8,14 +8,14 @@ public class BankManager : MonoBehaviour
 {
     [SerializeField] float maxBalance = 1000;
     public float costMoney = 100;
-    //[SerializeField] TextMeshProUGUI _text;
     [SerializeField] public float currentBalance;
     public static int lostCoin;
-    
+
     //public float CurrentBalance { get { return currentBalance; } }
 
  
-    private void Start() {
+    private void Start() 
+    {
         currentBalance = maxBalance;
     }
 

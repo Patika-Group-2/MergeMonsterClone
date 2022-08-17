@@ -7,20 +7,22 @@ public class WinScreenHandler : MonoBehaviour
     [SerializeField] private TMP_Text _level;
     [SerializeField] private TMP_Text _earnedGold;
     [SerializeField] private TMP_Text _totalGold;
+    [SerializeField] private AudioClip _winSound;
 
     private void Start()
     {
         StarCalculator();
+        SoundManager.Instance.PlaySound(_winSound);
     }
     public void NextButton()
     {
-        UIManager.Instance.GoToFightScreen();
+        UIManager.Instance.GoToFightDirecetly();
         Destroy(gameObject);
     }
 
     public void ShopButton()
     {
-        UIManager.Instance.GoToShopScreen();
+        UIManager.Instance.GoToShopDirecetly();
         Destroy(gameObject);
     }
 

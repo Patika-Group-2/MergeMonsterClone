@@ -59,20 +59,35 @@ public class UIManager : MonoBehaviour
 
     public void GoToFightScreen()
     {
-        EntityManager.Instance.SetEntityList();
+        
         LevelCreator.Instance.LoadPlayerSO();
+        LevelCreator.Instance.SetLevel();
         StartCoroutine(ShowCor(_fightCam, _fightCanvas));
+    }
+
+    public void GoToFightDirecetly()
+    {
+        StartCoroutine(ShowCor(_fightCam, _fightCanvas));
+        LevelCreator.Instance.SetLevel();
+    }
+
+    public void GoToShopDirecetly()
+    {
+        LevelCreator.Instance.SetLevel();
+        StartCoroutine(ShowCor(_shopCam, _shopCanvas));
     }
 
     public void GoToMergeScreen()
     {
-        EntityManager.Instance.SetEntityList();
         LevelCreator.Instance.LoadPlayerSO();
+        LevelCreator.Instance.SetLevel();
         StartCoroutine(ShowCor(_mergeCam, _mergeCanvas));
     }
 
     public void GoToShopScreen()
     {
+        LevelCreator.Instance.LoadPlayerSO();
+        LevelCreator.Instance.SetLevel();
         StartCoroutine(ShowCor(_shopCam, _shopCanvas));
     }
 
@@ -86,7 +101,6 @@ public class UIManager : MonoBehaviour
         cam.tag = "MainCamera";
         _autoExposure.keyValue.value = 1;
         canvas.enabled = true;
-        LevelCreator.Instance.SetLevel();
     }
 
     void ResetCam()
