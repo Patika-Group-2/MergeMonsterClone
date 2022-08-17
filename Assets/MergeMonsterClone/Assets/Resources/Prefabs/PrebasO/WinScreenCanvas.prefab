@@ -775,6 +775,7 @@ MonoBehaviour:
   _level: {fileID: 587819054930121845}
   _earnedGold: {fileID: 587819054624431071}
   _totalGold: {fileID: 587819054084050416}
+  _winSound: {fileID: 8300000, guid: 64c9f5592df61d94784fbde1e117b0b5, type: 3}
 --- !u!1 &587819054539616351
 GameObject:
   m_ObjectHideFlags: 0

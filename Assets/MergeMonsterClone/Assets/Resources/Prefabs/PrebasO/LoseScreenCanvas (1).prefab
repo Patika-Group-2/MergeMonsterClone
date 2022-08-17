@@ -250,6 +250,7 @@ MonoBehaviour:
   _level: {fileID: 2666590814219161254}
   _earnedGold: {fileID: 2666590814113808652}
   _totalGold: {fileID: 2666590815738418979}
+  _loseSound: {fileID: 8300000, guid: 4a426ee554ba12843925affd1594cf8f, type: 3}
 --- !u!1 &2666590814062291596
 GameObject:
   m_ObjectHideFlags: 0

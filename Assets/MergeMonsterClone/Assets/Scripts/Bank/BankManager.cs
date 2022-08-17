@@ -15,6 +15,7 @@ public class BankManager : MonoBehaviour
 
     private void Awake() 
     {
+        _text = GetComponent<TextMeshProUGUI>();
         currentBalance = maxBalance;
         _text.text = costMoney.ToString();
     }

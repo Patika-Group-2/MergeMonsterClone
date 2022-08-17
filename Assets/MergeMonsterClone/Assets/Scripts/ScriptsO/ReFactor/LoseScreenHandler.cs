@@ -6,16 +6,22 @@ public class LoseScreenHandler : MonoBehaviour
     [SerializeField] private TMP_Text _level;
     [SerializeField] private TMP_Text _earnedGold;
     [SerializeField] private TMP_Text _totalGold;
+    [SerializeField] private AudioClip _loseSound;
 
+    private void Start()
+    {
+        SoundManager.Instance.PlaySound(_loseSound);
+    }
     public void ReplyButton()
     {
-        UIManager.Instance.GoToFightScreen();
+        UIManager.Instance.GoToFightDirecetly();
         Destroy(gameObject);
+        //After destroy make transition effect
     }
 
     public void ShopButton()
     {
-        UIManager.Instance.GoToShopScreen();
+        UIManager.Instance.GoToShopDirecetly();
         Destroy(gameObject);
     }
 
