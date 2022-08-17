@@ -79,4 +79,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: cede8cee85a4c1446a920b5b36962820, type: 2}
   - {fileID: 11400000, guid: 454613838a6bdbd4f90f558b43ebbae5, type: 2}
   _bankManager: {fileID: 3085124668156471835}
-  _winWin: 2000
+  _winWin: 3000

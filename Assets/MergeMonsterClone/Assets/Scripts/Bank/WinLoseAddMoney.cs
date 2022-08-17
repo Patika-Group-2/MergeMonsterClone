@@ -8,7 +8,7 @@ public class WinLoseAddMoney : MonoBehaviour
     [SerializeField] BankManager _bankManager;
     private EnemyDataSO _currentLevel;
     private int _maxLevel;
-    public float _winWin;
+    [SerializeField] public float _winWin;
     
     CoinDropManager _coinDrop;
     public int LevelMax { get => _maxLevel; private set => _maxLevel = value; }

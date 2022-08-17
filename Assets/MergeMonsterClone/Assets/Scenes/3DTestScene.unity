@@ -961,6 +961,7 @@ MonoBehaviour:
   _cellSize: 2.5
   _originPosition: {x: 0, y: 0, z: 0}
   _boardTilePrefab: {fileID: 7018178326535721874, guid: 4c307afded4bc7d47b130fc3086522cc, type: 3}
+  _characterPrefab: {fileID: 0}
   _characterLayerMask:
     serializedVersion: 2
     m_Bits: 64
@@ -1148,6 +1149,10 @@ PrefabInstance:
       propertyPath: _shopCanvas
       value: 
       objectReference: {fileID: 641300414}
+    - target: {fileID: 3619365075154942199, guid: 875ee69e2344fe54bbf2423f641e76fd, type: 3}
+      propertyPath: _bankManager
+      value: 
+      objectReference: {fileID: 1382561710}
     - target: {fileID: 3619365075154942199, guid: 875ee69e2344fe54bbf2423f641e76fd, type: 3}
       propertyPath: _fightCanvas
       value: 
@@ -1702,6 +1707,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5226178615905246237, guid: 82d920450225dba44a50a4c0e619be17, type: 3}
+      propertyPath: _wLan
+      value: 
+      objectReference: {fileID: 772318810}
     - target: {fileID: 5226178615905246238, guid: 82d920450225dba44a50a4c0e619be17, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -2238,6 +2247,17 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
+--- !u!114 &1382561710 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3085124668156471835, guid: 1d5081e50ac34ab4db3a3744b717374d, type: 3}
+  m_PrefabInstance: {fileID: 3085124667452312643}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84490374f16f9e54daece34071da30f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1383975989
 GameObject:
   m_ObjectHideFlags: 0
@@ -2441,7 +2461,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1426362476}
-  m_Enabled: 0
+  m_Enabled: 1
 --- !u!4 &1426362479
 Transform:
   m_ObjectHideFlags: 0
@@ -4000,6 +4020,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a90b063deb7db95478f3a2ecf646eed5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _ambientSound: {fileID: 0}
 --- !u!1001 &3085124667452312643
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4594,6 +4615,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a90b063deb7db95478f3a2ecf646eed5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _ambientSound: {fileID: 0}
 --- !u!1001 &8110607770241352616
 PrefabInstance:
   m_ObjectHideFlags: 0
