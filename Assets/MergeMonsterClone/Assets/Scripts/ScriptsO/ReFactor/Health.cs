@@ -21,9 +21,6 @@ public class Health : MonoBehaviour
         float percentage = (float)_hitPoints / (float)_maxHitPoint;
         StartCoroutine(_healthBar.ChangeHealthBar(percentage));
 
-        if (this.gameObject.tag == "Enemy")
-            Destroy(Instantiate(Resources.Load("FX/Particles/Particlee"), transform.position, Quaternion.Euler(-90, -90, 0)), 2f);
-
         if (_hitPoints <= 0 && this.gameObject.tag == "Enemy")
         {
             DieEnemy();

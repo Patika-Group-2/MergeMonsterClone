@@ -33,6 +33,7 @@ public class Bullet : MonoBehaviour
         if (distance <= 0.5f)
         {
             Destroy(gameObject);
+            Destroy(Instantiate(Resources.Load("FX/Particles/Particlee"), transform.position, Quaternion.Euler(-90, -90, 0)), 2f);
             Character target = Target.GetComponent<Character>();
             target.TakeDamage(Damage);
         }

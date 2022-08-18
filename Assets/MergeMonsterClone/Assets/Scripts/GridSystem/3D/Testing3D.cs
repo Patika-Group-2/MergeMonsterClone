@@ -188,13 +188,13 @@ public class Testing3D : MonoBehaviour
             switch (mergeTag)
             {
                 case ("HumanLevel0"):
-                    MergedCharacter = Instantiate(Resources.Load("Prefabs/Ally/Dragons/Red_Dragon_2") as GameObject);
+                    MergedCharacter = Instantiate(Resources.Load("Prefabs/Ally/Dragons/Green_Dragon_4") as GameObject);
                     break;
                 case ("HumanLevel1"):
                     MergedCharacter = Instantiate(Resources.Load("Prefabs/Ally/Dragons/Orange_Dragon_3") as GameObject);
                     break;
                 case ("HumanLevel2"):
-                    MergedCharacter = Instantiate(Resources.Load("Prefabs/Ally/Dragons/Green_Dragon_4") as GameObject);
+                    MergedCharacter = Instantiate(Resources.Load("Prefabs/Ally/Dragons/Red_Dragon_2") as GameObject);
                     break;
                 default:
                     MergedCharacter = null;

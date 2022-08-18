@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MainMenuButtonHandler : MonoBehaviour
 {
@@ -18,6 +19,6 @@ public class MainMenuButtonHandler : MonoBehaviour
     public void PlayButton()
     {
         _source.PlayOneShot(_buttonClickSound);
-        //Load Scene
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

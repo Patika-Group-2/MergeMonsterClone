@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/MergeMonsterClone/Assets/Scenes/MainMenuScene.unity
+    guid: a0120cf5d789f41459dac938062f2673
+  - enabled: 1
+    path: Assets/MergeMonsterClone/Assets/Scenes/GameScene.unity
+    guid: 150bc5049852ce94c839d9bf18bef055
   m_configObjects: {}
