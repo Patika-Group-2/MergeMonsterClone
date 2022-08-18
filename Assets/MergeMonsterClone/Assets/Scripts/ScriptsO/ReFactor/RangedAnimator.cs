@@ -12,6 +12,6 @@ public class RangedAnimator : MonoBehaviour
 
     public void AttackAnimation()
     {
-        // _rangedAnimator.SetTrigger("Attack");
+        _rangedAnimator.SetTrigger("Attack");
     }
 }

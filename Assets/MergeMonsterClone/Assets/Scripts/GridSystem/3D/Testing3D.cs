@@ -10,7 +10,6 @@ public class Testing3D : MonoBehaviour
     [SerializeField] Vector3 _originPosition = Vector3.zero;
 
     [SerializeField] GameObject _boardTilePrefab;
-    [SerializeField] GameObject _characterPrefab;
 
     [SerializeField] LayerMask _characterLayerMask;
     [SerializeField] LayerMask _groundLayerMask;

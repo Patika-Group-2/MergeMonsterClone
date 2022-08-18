@@ -6,7 +6,7 @@ public class Health : MonoBehaviour
     [SerializeField] private int _hitPoints;
     [SerializeField] private HealthBar _healthBar;
     CoinDropManager _enemyDropCoin;
-    
+
 
     private void Awake()
     {
@@ -21,11 +21,14 @@ public class Health : MonoBehaviour
         float percentage = (float)_hitPoints / (float)_maxHitPoint;
         StartCoroutine(_healthBar.ChangeHealthBar(percentage));
 
+        if (this.gameObject.tag == "Enemy")
+            Destroy(Instantiate(Resources.Load("FX/Particles/Particlee"), transform.position, Quaternion.Euler(-90, -90, 0)), 2f);
+
         if (_hitPoints <= 0 && this.gameObject.tag == "Enemy")
         {
             DieEnemy();
         }
-        else if(_hitPoints <= 0 && this.gameObject.tag != "Enemy")
+        else if (_hitPoints <= 0 && this.gameObject.tag != "Enemy")
         {
             DieFriend();
         }
@@ -40,6 +43,6 @@ public class Health : MonoBehaviour
         _enemyDropCoin.AddCoin();
         Destroy(gameObject);
     }
-    
+
 
 }

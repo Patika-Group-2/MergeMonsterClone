@@ -59,6 +59,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 12
       objectReference: {fileID: 0}
+    - target: {fileID: 3339099960923174965, guid: f92baba29ecbb224391d7414436c1d50, type: 3}
+      propertyPath: _movementSpeed
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3461755576411691745, guid: f92baba29ecbb224391d7414436c1d50, type: 3}
       propertyPath: m_RootOrder
       value: 0

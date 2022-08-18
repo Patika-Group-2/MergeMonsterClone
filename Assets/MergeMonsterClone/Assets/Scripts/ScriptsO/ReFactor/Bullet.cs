@@ -6,7 +6,7 @@ public class Bullet : MonoBehaviour
     public int Damage { get; set; }
 
     [SerializeField] private float _speed;
-    
+
     private void Start()
     {
         transform.LookAt(Target);
@@ -18,7 +18,7 @@ public class Bullet : MonoBehaviour
     }
     public void MoveTowardsTarget()
     {
-        if(Target == null)
+        if (Target == null)
         {
             Destroy(gameObject);
             return;
@@ -30,7 +30,7 @@ public class Bullet : MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position,
             Target.position, Time.deltaTime * _speed);
 
-        if(distance <= 0.5f)
+        if (distance <= 0.5f)
         {
             Destroy(gameObject);
             Character target = Target.GetComponent<Character>();
