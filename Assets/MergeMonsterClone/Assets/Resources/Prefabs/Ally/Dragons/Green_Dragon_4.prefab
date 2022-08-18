@@ -222,14 +222,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4848785629314502312}
-  m_LocalRotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -0.009094086, y: 0.00000003973643, z: 0.059855875}
   m_LocalScale: {x: 9.340124, y: 9.340124, z: 7.6505938}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7884394450331870178}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -90, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!33 &9200383374188878775
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -293,7 +293,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7884394450331870178}
-  - component: {fileID: 2490064428664169056}
   - component: {fileID: 7962669154208295869}
   - component: {fileID: 4741595955688753395}
   - component: {fileID: 3480017302123277440}
@@ -303,6 +302,7 @@ GameObject:
   - component: {fileID: -366545047653517144}
   - component: {fileID: 2426568395002012190}
   - component: {fileID: 751377592819468663}
+  - component: {fileID: 3539937382527749908}
   m_Layer: 6
   m_Name: Green_Dragon_4
   m_TagString: HumanLevel3
@@ -317,7 +317,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6403634617147196893}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
@@ -327,25 +327,7 @@ Transform:
   - {fileID: 7583173114352295609}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2490064428664169056
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6403634617147196893}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e4b6655ef8e86b40bbf36c195ca9c2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _prefabPath: Prefabs/Ally/Dragons/Green_Dragon_4
-  Row: 0
-  Column: 0
-  _findTarget: {fileID: 0}
-  _health: {fileID: 0}
-  _attack: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!114 &7962669154208295869
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -556,6 +538,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _attackSound: {fileID: 8300000, guid: 6f1fcd19921926b498f90ae673c7ea33, type: 3}
+--- !u!114 &3539937382527749908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6403634617147196893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e4b6655ef8e86b40bbf36c195ca9c2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _prefabPath: Prefabs/Ally/Dragons/Green_Dragon_4
+  Row: 0
+  Column: 0
+  _findTarget: {fileID: 0}
+  _health: {fileID: 0}
+  _attack: {fileID: 0}
 --- !u!1 &7458974581420367066
 GameObject:
   m_ObjectHideFlags: 0

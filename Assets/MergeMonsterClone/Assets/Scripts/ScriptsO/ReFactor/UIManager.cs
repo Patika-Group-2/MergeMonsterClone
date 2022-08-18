@@ -13,14 +13,12 @@ public class UIManager : MonoBehaviour
     [SerializeField] Camera _shopCam, _fightCam, _mergeCam;
     [SerializeField] Canvas _shopCanvas, _fightCanvas, _mergeCanvas;
     [SerializeField] PostProcessVolume _volume;
-    [SerializeField] BankManager _bankManager;
 
     AutoExposure _autoExposure;
-    [SerializeField] WinLoseAddMoney _wLAM;
 
     private void Awake()
     {
-  
+
         if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
@@ -36,31 +34,38 @@ public class UIManager : MonoBehaviour
     private void Start()
     {
         _volume.profile.TryGetSettings(out _autoExposure);
-        
 
         GameManager.Instance.OnWin += LoadWinScreen;
         GameManager.Instance.OnLose += LoadLoseScreen;
-
     }
 
     public void LoadWinScreen()
     {
+        WinLoseAddMoney.Instance.AddMoney();
         GameObject _gameObject = Instantiate(_winScreenPrefab);
         WinScreenHandler _wSH = _gameObject.GetComponent<WinScreenHandler>();
-        _wSH.SetTexts(GameManager.Instance.CurrentLevel,_wLAM._winWin, _bankManager.currentBalance);
+        _wSH.SetTexts(GameManager.Instance.CurrentLevel, WinLoseAddMoney.Instance._winWin, BankManager.Instance.currentBalance);
         //Send parameters for text
     }
 
     public void LoadLoseScreen()
     {
-        Instantiate(_loseScreenPrefab);
+        CoinDropManager.Instance.AddTotalCoin();
+
+        GameObject _gameObject = Instantiate(_loseScreenPrefab);
+        LoseScreenHandler _lSH = _gameObject.GetComponent<LoseScreenHandler>();
+
+        _lSH.SetTexts(GameManager.Instance.CurrentLevel,
+                      CoinDropManager.Instance.MoneyHolder,
+                      BankManager.Instance.currentBalance);
+
+        CoinDropManager.Instance.ResetMoney();
         //Send parameters for text and images
     }
 
     public void GoToFightScreen()
     {
         LevelCreator.Instance.LoadPlayerSO();
-        LevelCreator.Instance.SetLevel();
         StartCoroutine(ShowCor(_fightCam, _fightCanvas));
     }
 
@@ -72,21 +77,18 @@ public class UIManager : MonoBehaviour
 
     public void GoToShopDirecetly()
     {
-        LevelCreator.Instance.SetLevel();
         StartCoroutine(ShowCor(_shopCam, _shopCanvas));
     }
 
     public void GoToMergeScreen()
     {
         LevelCreator.Instance.LoadPlayerSO();
-        LevelCreator.Instance.SetLevel();
         StartCoroutine(ShowCor(_mergeCam, _mergeCanvas));
     }
 
     public void GoToShopScreen()
     {
         LevelCreator.Instance.LoadPlayerSO();
-        LevelCreator.Instance.SetLevel();
         StartCoroutine(ShowCor(_shopCam, _shopCanvas));
     }
 
@@ -100,6 +102,7 @@ public class UIManager : MonoBehaviour
         cam.tag = "MainCamera";
         _autoExposure.keyValue.value = 1;
         canvas.enabled = true;
+        LevelCreator.Instance.SetLevel();
     }
 
     void ResetCam()

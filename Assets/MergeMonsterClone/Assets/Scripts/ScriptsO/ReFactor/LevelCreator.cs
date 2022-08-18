@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -16,6 +15,8 @@ public class LevelCreator : MonoBehaviour
 
     public List<Character> Players => _players;
     public List<Character> Enemies => _enemies;
+
+    public EnemyDataSO CurrentLevel => _currentLevel;
 
     private int _maxLevel;
 
@@ -49,17 +50,6 @@ public class LevelCreator : MonoBehaviour
         _enemies = new List<Character>();
         GenerateEnemies();
         GeneratePlayers();
-    }
-
-    private void Update()
-    {
-        //This code will be added to OnApplicationQuit()
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            LoadPlayerSO();
-            //Save level to PlayerPrefs
-            //Set coin to playerprefs
-        }
     }
 
     public void GenerateEnemies()
@@ -197,5 +187,10 @@ public class LevelCreator : MonoBehaviour
     public void SetPlayerCountAtEnd()
     {
         PlayerCountAtEnd = _players.Count;
+    }
+
+    private void OnApplicationQuit()
+    {
+        LoadPlayerSO();
     }
 }

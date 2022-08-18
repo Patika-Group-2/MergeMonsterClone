@@ -6,7 +6,6 @@ public class Health : MonoBehaviour
     [SerializeField] private int _hitPoints;
     [SerializeField] private HealthBar _healthBar;
     CoinDropManager _enemyDropCoin;
-    
 
     private void Awake()
     {
@@ -37,7 +36,7 @@ public class Health : MonoBehaviour
     }
     private void DieEnemy()
     {
-        _enemyDropCoin.CoinDrop();
+       // _enemyDropCoin.CoinDrop();
         Destroy(gameObject);
     }
     

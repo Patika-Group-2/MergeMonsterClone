@@ -1,22 +1,28 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
 
 public class BankManager : MonoBehaviour
 {
-    [SerializeField] float maxBalance = 1000;
-    public float costMoney = 100;
-    [SerializeField] public float currentBalance;
-    public static int lostCoin;
+    public static BankManager Instance;
 
-    //public float CurrentBalance { get { return currentBalance; } }
+    private void Awake()
+    {
+        if(Instance != null && Instance  != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        else
+        {
+            Instance = this;
+        }
+    }
 
- 
+    [SerializeField] public float currentBalance = 1000f;
+    
     private void Start() 
     {
-        currentBalance = maxBalance;
+        if (PlayerPrefs.HasKey("TotalGold"))
+            currentBalance = PlayerPrefs.GetFloat("TotalGold");
     }
 
     public void Withdraw(float amount)
@@ -29,4 +35,8 @@ public class BankManager : MonoBehaviour
         currentBalance += Mathf.Round(amount);
     }
 
+    private void OnApplicationQuit()
+    {
+        PlayerPrefs.SetFloat("TotalGold", currentBalance);
+    }
 }
