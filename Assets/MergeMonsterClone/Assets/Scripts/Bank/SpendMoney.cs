@@ -9,6 +9,7 @@ public class SpendMoney : MonoBehaviour
     [SerializeField] float currentSpend;
     [SerializeField] Button _btn;
     public float CurrentSpend { get { return currentSpend; } }
+   
     BankManager bankManager;
     private void Awake() {
         bankManager = GetComponent<BankManager>();
@@ -17,7 +18,7 @@ public class SpendMoney : MonoBehaviour
     }
     public void BuyCharacter()
     {
-        if(bankManager.CurrentBalance < currentSpend)
+        if(bankManager.currentBalance < currentSpend)
         {
             _btn.enabled = false;
         }

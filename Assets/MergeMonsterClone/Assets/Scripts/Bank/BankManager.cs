@@ -8,18 +8,16 @@ public class BankManager : MonoBehaviour
 {
     [SerializeField] float maxBalance = 1000;
     public float costMoney = 100;
-    [SerializeField] TextMeshProUGUI _text;
-    [SerializeField] float currentBalance;
+    [SerializeField] public float currentBalance;
     public static int lostCoin;
-    public float CurrentBalance { get { return currentBalance; } }
 
-    private void Awake() 
+    //public float CurrentBalance { get { return currentBalance; } }
+
+ 
+    private void Start() 
     {
-        _text = GetComponent<TextMeshProUGUI>();
         currentBalance = maxBalance;
-        _text.text = costMoney.ToString();
     }
-    
 
     public void Withdraw(float amount)
     {

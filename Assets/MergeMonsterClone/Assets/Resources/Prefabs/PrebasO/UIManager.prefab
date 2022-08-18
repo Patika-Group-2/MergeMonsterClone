@@ -46,3 +46,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _winScreenPrefab: {fileID: 587819054485099089, guid: c892dfc2b82bb1a4484d2153a82c3f1c, type: 3}
   _loseScreenPrefab: {fileID: 2666590813722560642, guid: 50a689daac98b404daf2b7dcd45a988a, type: 3}
+  _shopCam: {fileID: 0}
+  _fightCam: {fileID: 0}
+  _mergeCam: {fileID: 0}
+  _shopCanvas: {fileID: 0}
+  _fightCanvas: {fileID: 0}
+  _mergeCanvas: {fileID: 0}
+  _volume: {fileID: 0}
+  _bankManager: {fileID: 3085124668156471835, guid: 1d5081e50ac34ab4db3a3744b717374d, type: 3}
+  _wLAM: {fileID: 3085124668156471828, guid: 1d5081e50ac34ab4db3a3744b717374d, type: 3}

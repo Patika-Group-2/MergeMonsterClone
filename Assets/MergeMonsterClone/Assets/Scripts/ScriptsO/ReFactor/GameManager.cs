@@ -12,6 +12,9 @@ public class GameManager : MonoBehaviour
     public event Action OnWin;
     public event Action OnLose;
 
+    [SerializeField] WinLoseAddMoney _wLan;
+
+    
 
     private void Awake()
     {
@@ -43,12 +46,12 @@ public class GameManager : MonoBehaviour
 
         if (EntityManager.Instance.Enemies.Count == 0)
         {
+            _wLan.AddMoney();
             LevelCreator.Instance.SetPlayerCountAtEnd();
             //Instantiate or enable Win Screen
             OnWin?.Invoke();
             if(CurrentLevel < LevelCreator.Instance.MaxLevel)
             CurrentLevel++;
-
             GameIsRunning = false;
             EntityManager.Instance.ClearLists();
             return;

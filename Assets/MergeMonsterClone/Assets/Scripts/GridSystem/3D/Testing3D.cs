@@ -94,7 +94,7 @@ public class Testing3D : MonoBehaviour
 
                     tile = _boardGrid.GetGridObject(hitGroundObj.point);
 
-                    if (tile == null)
+                    if (tile == null || tile.Row > 3)
                     {
                         _characterInstance.PositionCharacter(GetTilePosition(_lastPickedTile), _characterInstance.CharacterPrefab.transform.rotation);
                         SetTileState(_lastPickedTile, false);

@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _enemyList:
   - {fileID: 5814999072268434709, guid: 7f088f11f81d8204786d0ee8e4620082, type: 3}
-  - {fileID: 5814999072268434709, guid: 7f088f11f81d8204786d0ee8e4620082, type: 3}
+  - {fileID: 2373207313015841019, guid: fdce9bad8f670074486d2d6b7af2dede, type: 3}
   - {fileID: 5976588085756346610, guid: 2bdcad00ee34e944eb4f43d9962f2e90, type: 3}
   _rows: 000000000000000003000000
-  _columns: 000000000400000007000000
-  _coinWins: 0
+  _columns: 040000000500000005000000
+  _coinWins: 2000

@@ -8,6 +8,7 @@ public class WinScreenHandler : MonoBehaviour
     [SerializeField] private TMP_Text _earnedGold;
     [SerializeField] private TMP_Text _totalGold;
     [SerializeField] private AudioClip _winSound;
+    
 
     private void Start()
     {
@@ -27,7 +28,7 @@ public class WinScreenHandler : MonoBehaviour
     }
 
     //this func will added after bank system done
-    public void SetTexts(int level, int reward, int total)
+    public void SetTexts(int level, float reward, float total)
     {
         _level.text = level.ToString();
         _earnedGold.text = reward.ToString();
