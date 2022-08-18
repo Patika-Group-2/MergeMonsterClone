@@ -11,8 +11,8 @@ public class RangedGenerator : MonoBehaviour, ICharacterGenerator
     {
         //Green dragon not suitable for this method
         float characterOffset;
-        // Only Green and orange dragon must have this line
-        if (CharacterPrefab.name == "Orange_Dragon_3(Clone)" || CharacterPrefab.name == "Green_Dragon_4(Clone)")
+        // Only orange dragon must have this line
+        if (CharacterPrefab.name == "Orange_Dragon_3(Clone)")
             characterOffset = CharacterPrefab.GetComponentInChildren<Renderer>().bounds.size.y / 2;
         else
             characterOffset = 0;
