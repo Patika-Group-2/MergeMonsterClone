@@ -199,6 +199,19 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1046582992096852284, guid: 4a11a8ee4d2a39048aaa8808e4953b94, type: 3}
   m_PrefabInstance: {fileID: 977755203976866142}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &-482327587980749776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 222816593299722338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6db20c23429a5d744bcb5e44645ee57e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dropAmount: 150
 --- !u!114 &4362178590774998318
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -211,17 +224,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 762749d691caa484a9bf0745386f02eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &7357295269818431207
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 222816593299722338}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65ed38d0560a7d8409a5d20576c1fdbd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _dropCoin: 150
-  loseMoneyHolder: 0

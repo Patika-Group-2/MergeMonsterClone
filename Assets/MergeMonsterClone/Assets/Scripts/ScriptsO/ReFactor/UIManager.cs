@@ -72,7 +72,6 @@ public class UIManager : MonoBehaviour
     public void GoToFightDirecetly()
     {
         StartCoroutine(ShowCor(_fightCam, _fightCanvas));
-        LevelCreator.Instance.SetLevel();
     }
 
     public void GoToShopDirecetly()

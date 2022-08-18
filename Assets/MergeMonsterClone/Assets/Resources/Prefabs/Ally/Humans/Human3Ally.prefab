@@ -734,8 +734,8 @@ GameObject:
   - component: {fileID: 3339099960923174965}
   - component: {fileID: 8606926092198309034}
   - component: {fileID: 3776888640529932060}
+  - component: {fileID: 4883466517886683238}
   - component: {fileID: -5782091078281088536}
-  - component: {fileID: -5880293506226014810}
   m_Layer: 6
   m_Name: Human3Ally
   m_TagString: HumanLevel2
@@ -896,20 +896,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89e17b0f58c6fed43be834b4edbd29e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-5782091078281088536
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4269818130526584923}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1560a4396c3c6724a8d4a18d4ff02b53, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _attackSound: {fileID: 8300000, guid: 2b8c207613cd58b4889b0cc6bf739f2c, type: 3}
---- !u!82 &-5880293506226014810
+--- !u!82 &4883466517886683238
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1005,6 +992,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-5782091078281088536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4269818130526584923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1560a4396c3c6724a8d4a18d4ff02b53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _attackSound: {fileID: 8300000, guid: 2b8c207613cd58b4889b0cc6bf739f2c, type: 3}
 --- !u!1 &4326968214639628142
 GameObject:
   m_ObjectHideFlags: 0

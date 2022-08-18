@@ -2203,7 +2203,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7813227156516615250, guid: 32ce1256c90b8bf41a4a171a26600932, type: 3}
   m_PrefabInstance: {fileID: 6354325623775417076}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &-4427705743409583990
+--- !u!114 &-7903461816900830851
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2212,11 +2212,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3765345529220851366}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65ed38d0560a7d8409a5d20576c1fdbd, type: 3}
+  m_Script: {fileID: 11500000, guid: 6db20c23429a5d744bcb5e44645ee57e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dropCoin: 200
-  loseMoneyHolder: 0
+  _dropAmount: 200
 --- !u!114 &4170566353666273201
 MonoBehaviour:
   m_ObjectHideFlags: 0
