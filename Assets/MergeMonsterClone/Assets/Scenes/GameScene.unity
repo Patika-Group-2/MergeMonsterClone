@@ -881,6 +881,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3737760910579097066, guid: dc831dcfa85c9094ea56a71d93b512fc, type: 3}
+      propertyPath: m_Name
+      value: ShopScreenCanvas
+      objectReference: {fileID: 0}
     - target: {fileID: 3737760910579097071, guid: dc831dcfa85c9094ea56a71d93b512fc, type: 3}
       propertyPath: m_Camera
       value: 
@@ -1050,6 +1054,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1333947394}
     - target: {fileID: 4084339921983921546, guid: dc831dcfa85c9094ea56a71d93b512fc, type: 3}
+      propertyPath: m_Name
+      value: FightScreenCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 4084339921983921546, guid: dc831dcfa85c9094ea56a71d93b512fc, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -1057,6 +1065,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2107527339}
+    - target: {fileID: 8522147560233730789, guid: dc831dcfa85c9094ea56a71d93b512fc, type: 3}
+      propertyPath: m_Name
+      value: MergeScreenCanvas
+      objectReference: {fileID: 0}
     - target: {fileID: 8522147560233730790, guid: dc831dcfa85c9094ea56a71d93b512fc, type: 3}
       propertyPath: m_Camera
       value: 

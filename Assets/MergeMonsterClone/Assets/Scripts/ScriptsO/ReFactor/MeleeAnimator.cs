@@ -7,7 +7,7 @@ public class MeleeAnimator : MonoBehaviour
     private void Awake()
     {
         _meleeAnimator = GetComponent<Animator>();
-        GetComponent<MeleeAttack>().OnAttack += AttackAnimation;
+        GetComponent<Attack>().OnAttack += AttackAnimation;
         GetComponent<Movement>().OnMove += Move;
         GetComponent<Movement>().OnTargetClose += Stop;
     }

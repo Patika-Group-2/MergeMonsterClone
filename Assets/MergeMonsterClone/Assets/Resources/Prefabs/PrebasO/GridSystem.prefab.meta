@@ -1,6 +1,12 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/MergeMonsterClone/Assets/Resources/Prefabs/PrebasO/GridSystem.prefab.meta
 guid: be0c959fdd8a14549b5195b1dfeeefdf
 PrefabImporter:
+========
+guid: 8b0a5056619dbf14890942e3e6b31ad2
+folderAsset: yes
+DefaultImporter:
+>>>>>>>> origin/Okan3:Assets/MergeMonsterClone/Assets/Resources/AnimationsO/Humans/Human1/Animations.meta
   externalObjects: {}
   userData: 
   assetBundleName: 

@@ -7,7 +7,6 @@ public class Health : MonoBehaviour
     [SerializeField] private HealthBar _healthBar;
     CoinDropManager _enemyDropCoin;
 
-
     private void Awake()
     {
         _hitPoints = _maxHitPoint;
@@ -25,7 +24,7 @@ public class Health : MonoBehaviour
         {
             DieEnemy();
         }
-        else if (_hitPoints <= 0 && this.gameObject.tag != "Enemy")
+        else if(_hitPoints <= 0 && this.gameObject.tag != "Enemy")
         {
             DieFriend();
         }
@@ -37,9 +36,9 @@ public class Health : MonoBehaviour
     }
     private void DieEnemy()
     {
-        _enemyDropCoin.AddCoin();
+       // _enemyDropCoin.CoinDrop();
         Destroy(gameObject);
     }
-
+    
 
 }

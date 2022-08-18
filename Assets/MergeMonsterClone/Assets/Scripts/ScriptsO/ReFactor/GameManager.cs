@@ -12,10 +12,6 @@ public class GameManager : MonoBehaviour
     public event Action OnWin;
     public event Action OnLose;
 
-    [SerializeField] WinLoseAddMoney _wLan;
-
-    [SerializeField] CoinDropManager _cDM;
-
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -27,6 +23,9 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
         }
+
+        if (PlayerPrefs.HasKey("CurrentLevel"))
+            CurrentLevel = PlayerPrefs.GetInt("CurrentLevel");
     }
 
     private void Update()
@@ -46,7 +45,7 @@ public class GameManager : MonoBehaviour
 
         if (EntityManager.Instance.Enemies.Count == 0)
         {
-            _wLan.AddMoney();
+           
             LevelCreator.Instance.SetPlayerCountAtEnd();
             //Instantiate or enable Win Screen
             OnWin?.Invoke();
@@ -59,12 +58,16 @@ public class GameManager : MonoBehaviour
 
         else if (EntityManager.Instance.Players.Count == 0)
         {
-            _cDM.AddTotalCoin();
             //Instantiate or enable Lose Screen
             OnLose?.Invoke();
             GameIsRunning = false;
             EntityManager.Instance.ClearLists();
             return;
         }
+    }
+
+    private void OnApplicationQuit()
+    {
+        PlayerPrefs.SetInt("CurrentLevel", CurrentLevel);
     }
 }

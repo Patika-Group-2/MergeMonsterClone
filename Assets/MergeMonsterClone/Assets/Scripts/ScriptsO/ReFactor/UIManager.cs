@@ -13,16 +13,12 @@ public class UIManager : MonoBehaviour
     [SerializeField] Camera _shopCam, _fightCam, _mergeCam;
     [SerializeField] Canvas _shopCanvas, _fightCanvas, _mergeCanvas;
     [SerializeField] PostProcessVolume _volume;
-    [SerializeField] BankManager _bankManager;
-    [SerializeField] WinLoseAddMoney _wLAM;
-    [SerializeField] CoinDropManager _cDM;
 
     AutoExposure _autoExposure;
-    
 
     private void Awake()
     {
-  
+
         if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
@@ -38,26 +34,32 @@ public class UIManager : MonoBehaviour
     private void Start()
     {
         _volume.profile.TryGetSettings(out _autoExposure);
-        
 
         GameManager.Instance.OnWin += LoadWinScreen;
         GameManager.Instance.OnLose += LoadLoseScreen;
-
     }
 
     public void LoadWinScreen()
     {
+        WinLoseAddMoney.Instance.AddMoney();
         GameObject _gameObject = Instantiate(_winScreenPrefab);
         WinScreenHandler _wSH = _gameObject.GetComponent<WinScreenHandler>();
-        _wSH.SetTexts(GameManager.Instance.CurrentLevel,_wLAM._winWin, _bankManager.currentBalance);
+        _wSH.SetTexts(GameManager.Instance.CurrentLevel, WinLoseAddMoney.Instance._winWin, BankManager.Instance.currentBalance);
         //Send parameters for text
     }
 
     public void LoadLoseScreen()
     {
-        GameObject _gameOBjectLose = Instantiate(_loseScreenPrefab);
-        LoseScreenHandler _lSH = _gameOBjectLose.GetComponent<LoseScreenHandler>();
-        _lSH.SetTexts(GameManager.Instance.CurrentLevel,_cDM.loseMoneyHolder,_bankManager.currentBalance);
+        CoinDropManager.Instance.AddTotalCoin();
+
+        GameObject _gameObject = Instantiate(_loseScreenPrefab);
+        LoseScreenHandler _lSH = _gameObject.GetComponent<LoseScreenHandler>();
+
+        _lSH.SetTexts(GameManager.Instance.CurrentLevel,
+                      CoinDropManager.Instance.MoneyHolder,
+                      BankManager.Instance.currentBalance);
+
+        CoinDropManager.Instance.ResetMoney();
         //Send parameters for text and images
     }
 
@@ -70,6 +72,7 @@ public class UIManager : MonoBehaviour
     public void GoToFightDirecetly()
     {
         StartCoroutine(ShowCor(_fightCam, _fightCanvas));
+        LevelCreator.Instance.SetLevel();
     }
 
     public void GoToShopDirecetly()

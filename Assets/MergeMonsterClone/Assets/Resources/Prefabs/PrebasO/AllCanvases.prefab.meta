@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/MergeMonsterClone/Assets/Resources/Prefabs/PrebasO/AllCanvases.prefab.meta
 guid: dc831dcfa85c9094ea56a71d93b512fc
+========
+guid: 39b475e55f1f6b14c84aa83e956e25b9
+>>>>>>>> origin/Okan3:Assets/MergeMonsterClone/Assets/Resources/Prefabs/PrebasO/ShopScreenCanvas.prefab.meta
 PrefabImporter:
   externalObjects: {}
   userData: 

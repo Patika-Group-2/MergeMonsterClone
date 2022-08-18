@@ -7,7 +7,7 @@ public class RangedAnimator : MonoBehaviour
     private void Awake()
     {
         _rangedAnimator = GetComponent<Animator>();
-        GetComponent<RangedAttack>().OnAttack += AttackAnimation;
+        GetComponent<Attack>().OnAttack += AttackAnimation;
     }
 
     public void AttackAnimation()

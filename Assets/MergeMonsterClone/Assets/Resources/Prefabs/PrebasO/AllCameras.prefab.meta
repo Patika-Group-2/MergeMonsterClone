@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/MergeMonsterClone/Assets/Resources/Prefabs/PrebasO/AllCameras.prefab.meta
 guid: 69fa384759094134591bcca06f973dbb
+========
+guid: 1f7c3d52900e23b4cb79eae5bce08434
+>>>>>>>> origin/Okan3:Assets/MergeMonsterClone/Assets/Resources/Prefabs/Ally/Dragons/GreenDragon.prefab.meta
 PrefabImporter:
   externalObjects: {}
   userData: 

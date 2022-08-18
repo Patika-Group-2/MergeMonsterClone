@@ -1,27 +1,40 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CoinDropManager : MonoBehaviour
 {
-    [SerializeField] int _dropCoin;
+    public static CoinDropManager Instance;
 
-    [SerializeField] public int loseMoneyHolder = 500;
-    BankManager _bankManager;
-
+    private int loseMoneyHolder;
+    public int MoneyHolder { get => loseMoneyHolder; set => loseMoneyHolder = value; }
 
     private void Awake()
     {
-        _bankManager = GetComponent<BankManager>();
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        else
+        {
+            Instance = this;
+        }
+
+        MoneyHolder = 0;
     }
 
-    public void AddCoin()
+    public void AddCoin(int coindrop)
     {
-        loseMoneyHolder = BankManager.lostCoin += _dropCoin;
+        MoneyHolder =  coindrop;
     }
 
     public void AddTotalCoin()
     {
-        _bankManager.Deposit(loseMoneyHolder);
+        BankManager.Instance.Deposit(MoneyHolder);
+        
+    }
+
+    public void ResetMoney()
+    {
+        MoneyHolder = 0;
     }
 }
