@@ -45,12 +45,12 @@ public class GameManager : MonoBehaviour
 
         if (EntityManager.Instance.Enemies.Count == 0)
         {
-           
+
             LevelCreator.Instance.SetPlayerCountAtEnd();
             //Instantiate or enable Win Screen
             OnWin?.Invoke();
-            if(CurrentLevel < LevelCreator.Instance.MaxLevel)
-            CurrentLevel++;
+            if (CurrentLevel < LevelCreator.Instance.MaxLevel)
+                CurrentLevel++;
             GameIsRunning = false;
             EntityManager.Instance.ClearLists();
             return;

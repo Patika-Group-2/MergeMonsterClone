@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87d255d552e60e54d966b9f44eb7831c, type: 3}
+  m_Name: Level4
+  m_EditorClassIdentifier: 
+  _enemyList:
+  - {fileID: 2722497533988225570, guid: 7fd084671fe93b244ac58dd2fbd74d18, type: 3}
+  - {fileID: 2722497533988225570, guid: 7fd084671fe93b244ac58dd2fbd74d18, type: 3}
+  - {fileID: 4323501641063275109, guid: 66e1329ebbdaefa4a8ffaab268069851, type: 3}
+  - {fileID: 2722497533988225570, guid: 7fd084671fe93b244ac58dd2fbd74d18, type: 3}
+  - {fileID: 3663605463858016531, guid: ca05566047e53fc4788c854084c130db, type: 3}
+  - {fileID: 3663605463858016531, guid: ca05566047e53fc4788c854084c130db, type: 3}
+  - {fileID: 3663605463858016531, guid: ca05566047e53fc4788c854084c130db, type: 3}
+  - {fileID: 3663605463858016531, guid: ca05566047e53fc4788c854084c130db, type: 3}
+  _rows: 0300000003000000030000000100000002000000010000000000000000000000
+  _columns: 0700000006000000050000000700000004000000050000000500000006000000
+  _coinWins: 3000
