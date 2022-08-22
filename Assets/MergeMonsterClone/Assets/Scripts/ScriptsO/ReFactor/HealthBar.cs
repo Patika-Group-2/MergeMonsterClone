@@ -1,13 +1,12 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour
 {
     [SerializeField] private Image _foregroundImage;
+    //to prevent a sudden decrease in life
     [SerializeField] private float _updateSpeed;
-
 
     private void Update()
     {
@@ -15,6 +14,7 @@ public class HealthBar : MonoBehaviour
         transform.Rotate(0, 180, 0);
     }
 
+    //make slowly decreasing health bar effect
     public IEnumerator ChangeHealthBar(float percentage)
     {
         float percentagePreChange = _foregroundImage.fillAmount;
@@ -27,7 +27,6 @@ public class HealthBar : MonoBehaviour
                 percentagePreChange, percentage, elapsed);
             yield return null;
         }
-
         _foregroundImage.fillAmount = percentage;
     }
 }

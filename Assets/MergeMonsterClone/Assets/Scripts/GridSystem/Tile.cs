@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Tile
 {
+    //Tile is belong this grid
     BoardGrid3D<Tile> _grid3D;
 
     public int Row { get; set; }
@@ -18,7 +19,7 @@ public class Tile
         Column = column;
         IsAvailable = true;
     }
-
+    //Get world position from specific tile
     public Vector3 Get3DTilePosition()
     {
         return _grid3D.GetWorldPosition(Row, Column);

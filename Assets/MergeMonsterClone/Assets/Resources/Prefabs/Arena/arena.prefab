@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4493440145457232092}
   - component: {fileID: 6433641603647100725}
   - component: {fileID: 440087873080647464}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7614233671703571100}
   - component: {fileID: 2842609886843421614}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Light.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -189,7 +189,7 @@ GameObject:
   - component: {fileID: 5198605749717524808}
   - component: {fileID: 6759520040536671077}
   - component: {fileID: 1960979066448321268}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -271,7 +271,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1189808888891859406}
   - component: {fileID: 633660671142260294}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Light.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -366,7 +366,7 @@ GameObject:
   - component: {fileID: 5425412477778040212}
   - component: {fileID: 294723281060653479}
   - component: {fileID: 1613356769075638614}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -448,7 +448,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3519899668197483612}
   - component: {fileID: 439336636378276863}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Light.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -543,7 +543,7 @@ GameObject:
   - component: {fileID: 3677897740026693898}
   - component: {fileID: 862424153527509087}
   - component: {fileID: 6620748003668088995}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -626,7 +626,7 @@ GameObject:
   - component: {fileID: 2170061610774790917}
   - component: {fileID: 376564874801274830}
   - component: {fileID: 314035990690763163}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -708,7 +708,7 @@ GameObject:
   m_Component:
   - component: {fileID: 667762252725682011}
   - component: {fileID: 5924749515283929935}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -802,7 +802,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5727410832857622719}
   - component: {fileID: 1483595073204814153}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Light.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -897,7 +897,7 @@ GameObject:
   - component: {fileID: 4860990542478001259}
   - component: {fileID: 4217872514819437301}
   - component: {fileID: 5732775972117048874}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -979,7 +979,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8576001266098003726}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: arena
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -995,7 +995,7 @@ Transform:
   m_GameObject: {fileID: 8957592701803562420}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 8, y: 0, z: 8}
-  m_LocalScale: {x: 2, y: 2, z: 3}
+  m_LocalScale: {x: 2, y: 2, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4860990542478001259}

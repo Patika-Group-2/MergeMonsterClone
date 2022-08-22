@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
 
@@ -34,33 +33,42 @@ public class UIManager : MonoBehaviour
     private void Start()
     {
         _volume.profile.TryGetSettings(out _autoExposure);
-
+        //Subscribe to events
         GameManager.Instance.OnWin += LoadWinScreen;
         GameManager.Instance.OnLose += LoadLoseScreen;
     }
 
     public void LoadWinScreen()
     {
-        WinLoseAddMoney.Instance.AddMoney();
+        //Add level prize to the total gold
+        BankManager.Instance.WinAddMoney.AddMoney();
+
+        //Instantiate prefab and get a reference to WinScreenHandler
         GameObject _gameObject = Instantiate(_winScreenPrefab);
-        WinScreenHandler _wSH = _gameObject.GetComponent<WinScreenHandler>();
-        _wSH.SetTexts(GameManager.Instance.CurrentLevel, WinLoseAddMoney.Instance._winWin, BankManager.Instance.currentBalance);
-        //Send parameters for text
+        WinScreenHandler wSH = _gameObject.GetComponent<WinScreenHandler>();
+
+        //Set WinScreen texts
+        wSH.SetTexts(GameManager.Instance.CurrentLevel, 
+            BankManager.Instance.WinAddMoney._winPrize, 
+            BankManager.Instance.currentBalance);
     }
 
     public void LoadLoseScreen()
     {
-        CoinDropManager.Instance.AddTotalCoin();
+        //Calculate how much money drops from enemies
+        BankManager.Instance.CoinDrop.AddTotalCoin();
 
+        //Instantiate prefab and get a reference to LoseScreenHandler
         GameObject _gameObject = Instantiate(_loseScreenPrefab);
-        LoseScreenHandler _lSH = _gameObject.GetComponent<LoseScreenHandler>();
+        LoseScreenHandler lSH = _gameObject.GetComponent<LoseScreenHandler>();
 
-        _lSH.SetTexts(GameManager.Instance.CurrentLevel,
-                      CoinDropManager.Instance.MoneyHolder,
+        //Set LoseScreen texts
+        lSH.SetTexts(GameManager.Instance.CurrentLevel,
+                      BankManager.Instance.CoinDrop.MoneyHolder,
                       BankManager.Instance.currentBalance);
 
-        CoinDropManager.Instance.ResetMoney();
-        //Send parameters for text and images
+        //Reset total droped money
+        BankManager.Instance.CoinDrop.ResetMoney();
     }
 
     public void GoToFightScreen()
@@ -68,12 +76,12 @@ public class UIManager : MonoBehaviour
         LevelCreator.Instance.LoadPlayerSO();
         StartCoroutine(ShowCor(_fightCam, _fightCanvas));
     }
-
+    // Go to fight from lose-win screen 
     public void GoToFightDirecetly()
     {
         StartCoroutine(ShowCor(_fightCam, _fightCanvas));
     }
-
+    // Go to shop from lose-win screen 
     public void GoToShopDirecetly()
     {
         StartCoroutine(ShowCor(_shopCam, _shopCanvas));
@@ -91,6 +99,7 @@ public class UIManager : MonoBehaviour
         StartCoroutine(ShowCor(_shopCam, _shopCanvas));
     }
 
+    //make transition effect and change camera
     IEnumerator ShowCor(Camera cam, Canvas canvas)
     {
         _autoExposure.keyValue.value = 0;
@@ -121,5 +130,4 @@ public class UIManager : MonoBehaviour
         _fightCanvas.enabled = false;
         _mergeCanvas.enabled = false;
     }
-
 }

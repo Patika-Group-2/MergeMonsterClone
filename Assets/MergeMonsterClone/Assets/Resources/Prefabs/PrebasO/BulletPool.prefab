@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3619365075154942198
+--- !u!1 &7872114658351076103
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,48 +8,40 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3619365075154942196}
-  - component: {fileID: 3619365075154942199}
+  - component: {fileID: 7872114658351076105}
+  - component: {fileID: 7872114658351076102}
   m_Layer: 0
-  m_Name: UIManager
+  m_Name: BulletPool
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3619365075154942196
+--- !u!4 &7872114658351076105
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3619365075154942198}
+  m_GameObject: {fileID: 7872114658351076103}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 339, y: 198.8, z: 0}
+  m_LocalPosition: {x: 0.10947388, y: 5.399074, z: 4.800895}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3619365075154942199
+--- !u!114 &7872114658351076102
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3619365075154942198}
+  m_GameObject: {fileID: 7872114658351076103}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df246759f61264e45b216e5303548e66, type: 3}
+  m_Script: {fileID: 11500000, guid: a7f458ea637e7c34288ac0f548e4f23a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _winScreenPrefab: {fileID: 587819054485099089, guid: c892dfc2b82bb1a4484d2153a82c3f1c, type: 3}
-  _loseScreenPrefab: {fileID: 587819054485099089, guid: ba1ac2226868f58408142a330efff199, type: 3}
-  _shopCam: {fileID: 0}
-  _fightCam: {fileID: 0}
-  _mergeCam: {fileID: 0}
-  _shopCanvas: {fileID: 0}
-  _fightCanvas: {fileID: 0}
-  _mergeCanvas: {fileID: 0}
-  _volume: {fileID: 0}
+  _shotPrefab: {fileID: -5668033667684773920, guid: e989909b07c56b44b96d84a4d51c7cd0, type: 3}

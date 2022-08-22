@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+//Manage shop screen buy buttons
 public class SpendMoney : MonoBehaviour
 {
     [SerializeField] private float _humanCurrentSpend = 100;

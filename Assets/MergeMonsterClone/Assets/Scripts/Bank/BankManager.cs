@@ -3,7 +3,8 @@ using UnityEngine;
 public class BankManager : MonoBehaviour
 {
     public static BankManager Instance;
-
+    public CoinDropManager CoinDrop;
+    public WinLoseAddMoney WinAddMoney;
     private void Awake()
     {
         if(Instance != null && Instance  != this)
@@ -15,8 +16,11 @@ public class BankManager : MonoBehaviour
         {
             Instance = this;
         }
-    }
 
+        CoinDrop = new CoinDropManager();
+        WinAddMoney = new WinLoseAddMoney();
+    }
+    //Starting money amount
     [SerializeField] public float currentBalance = 1000f;
     
     private void Start() 
@@ -25,11 +29,13 @@ public class BankManager : MonoBehaviour
             currentBalance = PlayerPrefs.GetFloat("TotalGold");
     }
 
+    //Decrease total money
     public void Withdraw(float amount)
     {
         currentBalance -= Mathf.Round(amount);
     }
 
+    //Increase total money
     public void Deposit(float amount)
     {
         currentBalance += Mathf.Round(amount);

@@ -45,6 +45,7 @@ public class Testing3D : MonoBehaviour
 
     void Update()
     {
+        //prevent to set character's position from fight screen
         if (Camera.main.name != "MergeCamera")
             return;
 
@@ -118,8 +119,10 @@ public class Testing3D : MonoBehaviour
                     else
                     {
                         _characterInstance.PositionCharacter(GetTilePosition(tile), _characterInstance.CharacterPrefab.transform.rotation);
+                        //Set character's tile id if character moved this tile
                         Character ch = _pickedCharacter.GetComponent<Character>();
                         LevelCreator.Instance.SetCharacterTileID(ch, tile.Row, tile.Column);
+
                         SetTileState(tile, false);
                         tile.TileObject = _pickedCharacter;
                         if (_lastPickedTile != tile)

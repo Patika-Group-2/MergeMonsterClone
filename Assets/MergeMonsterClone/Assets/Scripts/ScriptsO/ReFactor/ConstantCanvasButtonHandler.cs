@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+//Manage all buttons which are belong to this canvas 
 public class ConstantCanvasButtonHandler : MonoBehaviour
 {
     [SerializeField] private Sprite _muted;

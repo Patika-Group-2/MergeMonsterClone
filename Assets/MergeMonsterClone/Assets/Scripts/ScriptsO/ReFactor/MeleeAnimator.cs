@@ -1,5 +1,6 @@
 using UnityEngine;
 
+//manage melee character animations
 public class MeleeAnimator : MonoBehaviour
 {
     [SerializeField] private Animator _meleeAnimator;

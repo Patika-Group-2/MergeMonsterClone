@@ -1,16 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Wand : MonoBehaviour
 {
-
     [SerializeField] private Bullet _shotPrefab;
     
+    //Instantiate bullet and set bullet's target and damage
     public void Fire(Transform target, int damage)
     {
-        var shot = Instantiate(_shotPrefab, transform.position, Quaternion.identity);
-        Bullet bullet = shot.GetComponent<Bullet>();
+        Bullet bullet = BulletPool.Instance._pool.Get();
+        bullet.transform.position = transform.position;
         bullet.Target = target;
         bullet.Damage = damage;
     }

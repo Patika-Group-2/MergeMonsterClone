@@ -1144,7 +1144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a90b063deb7db95478f3a2ecf646eed5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _ambientSound: {fileID: 0}
+  _ambientSound: {fileID: 8300000, guid: 6a2bf7792ffd7544897c1f65a5d37a32, type: 3}
 --- !u!1 &4392541088012914173
 GameObject:
   m_ObjectHideFlags: 0
@@ -1836,6 +1836,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8042600384501066768, guid: a8118627a8b5f2346a7bf2e26958ae5c, type: 3}
+      propertyPath: _characterPrefab
+      value: 
+      objectReference: {fileID: 8013865661716135652, guid: 72a92b4fb4ec97a4abfd40a09c24a0ff, type: 3}
     - target: {fileID: 8042600384501066782, guid: a8118627a8b5f2346a7bf2e26958ae5c, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1948,6 +1952,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8042600385750817436, guid: a8118627a8b5f2346a7bf2e26958ae5c, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 86cfec6623d474141ae3b4589333fbbc, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a8118627a8b5f2346a7bf2e26958ae5c, type: 3}
 --- !u!224 &6647946156390773103 stripped

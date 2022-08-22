@@ -1,11 +1,11 @@
 using UnityEngine;
 
+//Make tile red when mouse over at the merge screen
 public class TilePointer : MonoBehaviour
 {
     [SerializeField] LayerMask _boardTileLayerMask;
 
     SpriteRenderer _tileSprite;
-
 
     void Update()
     {

@@ -20,6 +20,7 @@ public class LevelCreator : MonoBehaviour
 
     private int _maxLevel;
 
+    //this variables are being used to calculate WinScreen star calculation
     private int _playerCountAtBeginning;
     private int _playerCountAtEnd;
 
@@ -52,6 +53,7 @@ public class LevelCreator : MonoBehaviour
         GeneratePlayers();
     }
 
+    //Instantiate enemy units
     public void GenerateEnemies()
     {
         _enemies.Clear();
@@ -61,23 +63,28 @@ public class LevelCreator : MonoBehaviour
             int row = _currentLevel._rows[i];
             int column = _currentLevel._columns[i];
 
+            //Get correct tile from EnemyTile list
             Tile tile = Testing3D.BoardGrid.EnemyTiles[row, column];
 
             if (!tile.IsAvailable)
                 continue;
-
+            //Get world position from tile
             Vector3 postion = tile.Get3DTilePosition();
-
+            
+            //Instantiate character
             Character enemy = Instantiate(_currentLevel._enemyList[i]);
             ICharacterGenerator go = enemy.GetComponent<ICharacterGenerator>();
 
+            //position character
             go.PositionCharacter(postion, go.CharacterPrefab.transform.rotation);
+            //Add character to the dynamic enemy list
             _enemies.Add(enemy);
 
             tile.IsAvailable = false;
         }
     }
 
+    //Instantiate player units
     public void GeneratePlayers()
     {
         _players.Clear();
@@ -87,33 +94,39 @@ public class LevelCreator : MonoBehaviour
             int row = Data.Rows[i];
             int column = Data.Columns[i];
 
+            //Get correct tile from EnemyTile list
             Tile tile = Testing3D.BoardGrid.PlayerTiles[row, column];
 
             if (!tile.IsAvailable)
                 continue;
 
+            //Get world position from tile
             Vector3 postion = tile.Get3DTilePosition();
 
+            //Instantiate character 
             Character player = Instantiate(Data.PlayerEntities[i]);
             SetCharacterTileID(player, row, column);
 
+            //Position character
             ICharacterGenerator go = player.GetComponent<ICharacterGenerator>();
             go.PositionCharacter(postion, go.CharacterPrefab.transform.rotation);
 
             tile.TileObject = player.gameObject;
+            //Add character to the dynamic player list
             _players.Add(player);
 
             tile.IsAvailable = false;
         }
     }
 
+    //Set the given character's row and column id 
     public void SetCharacterTileID(Character ch, int row, int column)
     {
         ch.Row = row;
         ch.Column = column;
     }
 
-    //This func will be invoked with Win or Lose Screen Buttons
+    //Make evety tile avaliable, clear board then generate enemy and players from SO
     public void SetLevel()
     {
         _currentLevel = _levels[GameManager.Instance.CurrentLevel - 1];
@@ -140,6 +153,7 @@ public class LevelCreator : MonoBehaviour
         }
     }
 
+    //Clear player SO data
     public void ClearPlayerDataOfSO()
     {
         Data.Columns.Clear();
@@ -147,6 +161,7 @@ public class LevelCreator : MonoBehaviour
         Data.PlayerEntities.Clear();
     }
 
+    //Store players from dynamic player list to the SO
     public void LoadPlayerSO()
     {
         ClearPlayerDataOfSO();
@@ -180,17 +195,22 @@ public class LevelCreator : MonoBehaviour
         }
     }
 
+    //This func used to calculate stars
     public void SetPlayerCountAtBegin()
     {
         PlayerCountAtBeginning = _players.Count;
     }
+
+    //This func used to calculate stars
     public void SetPlayerCountAtEnd()
     {
         PlayerCountAtEnd = _players.Count;
     }
 
+    //While game is running do not load SO
     private void OnApplicationQuit()
     {
+        if(!GameManager.Instance.GameIsRunning)
         LoadPlayerSO();
     }
 }

@@ -29,6 +29,7 @@ public class MainMenuButtonHandler : MonoBehaviour
         StartCoroutine(ShowCor());
     }
 
+    //make transition effect
     IEnumerator ShowCor()
     {
         _autoExposure.keyValue.value = 0;

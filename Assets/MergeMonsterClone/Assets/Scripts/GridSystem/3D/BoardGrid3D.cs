@@ -1,6 +1,5 @@
 using UnityEngine;
 using System;
-using System.Collections.Generic;
 
 public class BoardGrid3D<TGridObject>
 {
@@ -33,6 +32,7 @@ public class BoardGrid3D<TGridObject>
 
         _gridTiles = new TGridObject[width, height];
 
+        //Create tiles
         for (int i = 0; i < _gridTiles.GetLength(0); i++)
         {
             for (int j = 0; j < _gridTiles.GetLength(1); j++)
@@ -50,12 +50,12 @@ public class BoardGrid3D<TGridObject>
         Debug.DrawLine(GetWorldPosition(width, 0) - new Vector3(1, 0, 1) * _cellSize / 2, GetWorldPosition(width, height) - new Vector3(1, 0, 1) * _cellSize / 2, Color.white, 100f);
         Debug.DrawLine(GetWorldPosition(0, height) - new Vector3(1, 0, 1) * _cellSize / 2, GetWorldPosition(width, height) - new Vector3(1, 0, 1) * _cellSize / 2, Color.white, 100f);
     }
-
+    //Get world position from row and column id
     public Vector3 GetWorldPosition(int row, int column)
     {
         return new Vector3(row, 0, column) * _cellSize + _originPosition + new Vector3(1, 0, 1) * _cellSize / 2;
     }
-
+    //get row and column from world position
     public void GetRowAndColumn(Vector3 worldPosition, out int row, out int column)
     {
         row = Mathf.FloorToInt((worldPosition - _originPosition).x / _cellSize);
@@ -70,6 +70,7 @@ public class BoardGrid3D<TGridObject>
         }
     }
 
+
     public void SetGridObject(Vector3 worldPosition, TGridObject obj)
     {
         int row, column;
@@ -77,6 +78,7 @@ public class BoardGrid3D<TGridObject>
         SetGridObject(row, column, obj);
     }
 
+    //Get tile from row and column id 
     public TGridObject GetGridObject(int row, int column)
     {
         if (row >= 0 && column >= 0 && row < _gridWidth && column < _gridHeight)
@@ -87,6 +89,7 @@ public class BoardGrid3D<TGridObject>
             return default(TGridObject);
     }
 
+    //Get tile from world position
     public TGridObject GetGridObject(Vector3 worldPosition)
     {
         int row, column;
@@ -94,6 +97,7 @@ public class BoardGrid3D<TGridObject>
         return GetGridObject(row, column);
     }
 
+    
     public void SetEnemyTiles()
     {
         _enemyTiles = new TGridObject[(_gridTiles.GetLength(0) / 2), _gridTiles.GetLength(1)];

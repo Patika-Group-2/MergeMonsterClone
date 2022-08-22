@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+
+//Manage win screen
 public class WinScreenHandler : MonoBehaviour
 {
     [SerializeField] private Image[] _starImages;
@@ -9,10 +11,10 @@ public class WinScreenHandler : MonoBehaviour
     [SerializeField] private TMP_Text _totalGold;
     [SerializeField] private AudioClip _winSound;
     
-
     private void Start()
     {
         StarCalculator();
+        SoundManager.Instance.StopSound();
         SoundManager.Instance.PlaySound(_winSound);
     }
     public void NextButton()
@@ -27,7 +29,7 @@ public class WinScreenHandler : MonoBehaviour
         Destroy(gameObject);
     }
 
-    //this func will added after bank system done
+    //Set texts
     public void SetTexts(int level, float reward, float total)
     {
         _level.text = level.ToString();
@@ -35,6 +37,7 @@ public class WinScreenHandler : MonoBehaviour
         _totalGold.text = total.ToString();
     }
 
+    //Set star count
     public void SetStars(int starnumber)
     {
         if (starnumber > _starImages.Length)
@@ -46,6 +49,7 @@ public class WinScreenHandler : MonoBehaviour
         }
     }
 
+    //Calculate how many stars gained
     public void StarCalculator()
     {
         int beginningPlayer = LevelCreator.Instance.PlayerCountAtBeginning;

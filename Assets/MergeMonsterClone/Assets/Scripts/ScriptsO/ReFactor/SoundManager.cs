@@ -22,17 +22,13 @@ public class SoundManager : MonoBehaviour
         Source = GetComponent<AudioSource>();
     }
 
-    private void Start()
-    {
-        GameManager.Instance.OnLose += StopSound;
-        GameManager.Instance.OnWin += StopSound;
-    }
-
+    //play given clip
     public void PlaySound(AudioClip clip)
     {
         Source.PlayOneShot(clip);
     }
 
+    //stop clip
     public void StopSound()
     {
         Source.Stop();

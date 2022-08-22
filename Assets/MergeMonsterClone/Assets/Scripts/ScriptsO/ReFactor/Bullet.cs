@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Pool;
 
 public class Bullet : MonoBehaviour
 {
@@ -6,6 +7,8 @@ public class Bullet : MonoBehaviour
     public int Damage { get; set; }
 
     [SerializeField] private float _speed;
+
+    IObjectPool<Bullet> _pool;
 
     private void Start()
     {
@@ -16,11 +19,18 @@ public class Bullet : MonoBehaviour
     {
         MoveTowardsTarget();
     }
+
+    public void SetPool(IObjectPool<Bullet> pool)
+    {
+        _pool = pool;
+    }
+
     public void MoveTowardsTarget()
     {
+        //if target dies when bullet in the air, destroy bullet
         if (Target == null)
         {
-            Destroy(gameObject);
+            _pool.Release(this);
             return;
         }
 
@@ -32,8 +42,10 @@ public class Bullet : MonoBehaviour
 
         if (distance <= 0.5f)
         {
-            Destroy(gameObject);
+            _pool.Release(this);
             Destroy(Instantiate(Resources.Load("FX/Particles/Particlee"), transform.position, Quaternion.Euler(-90, -90, 0)), 2f);
+            
+            //Reference to target character to apply damage
             Character target = Target.GetComponent<Character>();
             target.TakeDamage(Damage);
         }

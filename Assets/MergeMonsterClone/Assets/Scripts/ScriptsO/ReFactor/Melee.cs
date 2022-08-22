@@ -2,9 +2,7 @@ using UnityEngine;
 
 public class Melee : Character
 {
-
     private Movement _movement;
-
     private void Awake()
     {
         _attack = GetComponent<Attack>();

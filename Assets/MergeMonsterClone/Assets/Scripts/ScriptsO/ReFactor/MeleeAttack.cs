@@ -14,7 +14,9 @@ public class MeleeAttack : Attack
 
         if (Time.time >= _nextAttackTime)
         {
+            //call event
             CallOnAttack();
+
             Character targetChar = target.gameObject.
                 GetComponent<Character>();
 

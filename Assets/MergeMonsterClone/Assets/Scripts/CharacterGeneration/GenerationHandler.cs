@@ -26,11 +26,13 @@ public class GenerationHandler : MonoBehaviour
         return tileList;
     }
 
+    // Get world position from specific tile 
     public Vector3 GetTilePosition(Tile tile)
     {
         return tile.Get3DTilePosition();
     }
 
+    //Attached to shop buy buttons
     public void GenerateCharacter()
     {
         foreach (Tile tile in Testing3D.BoardGrid.PlayerTiles)
@@ -38,15 +40,16 @@ public class GenerationHandler : MonoBehaviour
             if (tile.IsAvailable)
             {
                 ICharacterGenerator character = GetComponent<ICharacterGenerator>();
-
+                //Instantiate character
                 GameObject characterGO = character.GenerateCharacter();
-
+                // Set character position
                 characterGO.GetComponent<ICharacterGenerator>().PositionCharacter(GetTilePosition(tile), character.CharacterPrefab.transform.rotation);
-                Character ch = characterGO.GetComponent<Character>();
 
+                Character ch = characterGO.GetComponent<Character>();
+                // Set character's tile id's and add it to the dynamic player list
                 LevelCreator.Instance.SetCharacterTileID(ch, tile.Row, tile.Column);
                 LevelCreator.Instance.Players.Add(ch);
-
+                //make tile disable
                 tile.IsAvailable = false;
                 tile.TileObject = characterGO;
                 return;

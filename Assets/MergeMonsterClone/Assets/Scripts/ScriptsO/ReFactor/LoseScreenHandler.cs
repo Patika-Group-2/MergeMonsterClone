@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 
+//Manage lose screen 
 public class LoseScreenHandler : MonoBehaviour
 {
     [SerializeField] private TMP_Text _level;
@@ -10,13 +11,13 @@ public class LoseScreenHandler : MonoBehaviour
 
     private void Start()
     {
+        SoundManager.Instance.StopSound();
         SoundManager.Instance.PlaySound(_loseSound);
     }
     public void ReplyButton()
     {
         UIManager.Instance.GoToFightDirecetly();
         Destroy(gameObject);
-        //After destroy make transition effect
     }
 
     public void ShopButton()
@@ -25,7 +26,7 @@ public class LoseScreenHandler : MonoBehaviour
         Destroy(gameObject);
     }
 
-    //this func will added after bank system done
+    //Set lose screen texts
     public void SetTexts(int level, float reward, float total)
     {
         _level.text = level.ToString();

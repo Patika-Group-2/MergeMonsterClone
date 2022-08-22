@@ -2,6 +2,7 @@ using UnityEngine;
 using System;
 public class RangedAttack : Attack
 {
+    //reference to ranged weapon
     [SerializeField] private Wand _rangedWeapon;
     private void Awake()
     {
@@ -17,7 +18,9 @@ public class RangedAttack : Attack
 
         if (Time.time >= _nextAttackTime)
         {
+            //call event
             CallOnAttack();
+            //fire ranged weapon
             _rangedWeapon.Fire(target, _attackDamage);
             _nextAttackTime = Time.time + 1f / _attackSpeed;
         }

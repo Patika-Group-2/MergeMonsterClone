@@ -10,6 +10,7 @@ public class CharacterAudioManager : MonoBehaviour
     private void Awake()
     {
         _audiosource = GetComponent<AudioSource>();
+        //when OnAttack event triggers play the sound
         GetComponent<Attack>().OnAttack+=AttackSound;
     }
 
